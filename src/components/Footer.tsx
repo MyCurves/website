@@ -153,7 +153,7 @@ export default function Footer() {
             <p className="text-sm mb-4">Connect with us on social media</p>
             <div className="flex justify-center items-center space-x-6">
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/lovingmycurves"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-primary transition"
@@ -162,7 +162,7 @@ export default function Footer() {
                 <FacebookIcon className="h-6 w-6" />
               </a>
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/lovingmycurves"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-primary transition"
@@ -171,7 +171,7 @@ export default function Footer() {
                 <InstagramIcon className="h-6 w-6" />
               </a>
               <a
-                href="https://pinterest.com"
+                href="https://www.pinterest.com/lovingmycurves"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-primary transition"

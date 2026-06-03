@@ -29,15 +29,15 @@ export function Header() {
   }, []);
 
   const brasMenuItems = [
-    'Balconnet Bras',
-    'Full Cup Bras',
-    'Padded Bras',
-    'Strapless Bras',
-    'Plunge Bras',
-    'Sports Bras',
-    'Baby Dolls',
-    'Scantilly',
-    'Bra Accessories',
+    { name: 'Balconnet Bras', href: '/bras' },
+    { name: 'Full Cup Bras', href: '/bras' },
+    { name: 'Padded Bras', href: '/bras' },
+    { name: 'Strapless Bras', href: '/bras' },
+    { name: 'Plunge Bras', href: '/bras' },
+    { name: 'Sports Bras', href: '/bras' },
+    { name: 'Baby Dolls', href: '/bras' },
+    { name: 'Scantilly', href: '/bras' },
+    { name: 'Bra Accessories', href: '/bras' },
   ];
 
   const navItems = [
@@ -45,8 +45,14 @@ export function Header() {
     { name: 'BRAS', href: '/bras', hasDropdown: true },
     { name: 'PANTIES', href: '/panties' },
     { name: 'SHAPEWEAR', href: '/shapewear' },
-    { name: 'ON SALE', href: '/sale' },
+    { name: 'ON SALE', href: '/on-sale' },
   ];
+
+  const socialLinks = {
+    facebook: 'https://www.facebook.com/lovingmycurves',
+    instagram: 'https://www.instagram.com/lovingmycurves',
+    pinterest: 'https://www.pinterest.com/lovingmycurves',
+  };
 
   return (
     <header className="w-full fixed top-0 left-0 right-0 z-50">
@@ -61,13 +67,13 @@ export function Header() {
         <div className="flex items-center gap-4 ml-auto">
           {/* Social Icons */}
           <div className="flex items-center gap-3">
-            <Link href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#E6007E] transition-colors">
+            <Link href={socialLinks.facebook} target="_blank" rel="noopener noreferrer" className="hover:text-[#E6007E] transition-colors">
               <FacebookIcon className="w-4 h-4" />
             </Link>
-            <Link href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#E6007E] transition-colors">
+            <Link href={socialLinks.instagram} target="_blank" rel="noopener noreferrer" className="hover:text-[#E6007E] transition-colors">
               <InstagramIcon className="w-4 h-4" />
             </Link>
-            <Link href="https://pinterest.com" target="_blank" rel="noopener noreferrer" className="hover:text-[#E6007E] transition-colors">
+            <Link href={socialLinks.pinterest} target="_blank" rel="noopener noreferrer" className="hover:text-[#E6007E] transition-colors">
               <PinterestIcon className="w-4 h-4" />
             </Link>
           </div>
@@ -127,11 +133,11 @@ export function Header() {
                         >
                           {brasMenuItems.map((brasItem) => (
                             <Link
-                              key={brasItem}
-                              href={`/bras/${brasItem.toLowerCase().replace(/ /g, '-')}`}
+                              key={brasItem.name}
+                              href={brasItem.href}
                               className="block px-4 py-2 text-sm hover:bg-gray-100 hover:text-[#E6007E] transition-colors"
                             >
-                              {brasItem}
+                              {brasItem.name}
                             </Link>
                           ))}
                         </div>
@@ -208,12 +214,12 @@ export function Header() {
                         <div className="pl-4 space-y-2 mt-2">
                           {brasMenuItems.map((brasItem) => (
                             <Link
-                              key={brasItem}
-                              href={`/bras/${brasItem.toLowerCase().replace(/ /g, '-')}`}
+                              key={brasItem.name}
+                              href={brasItem.href}
                               className="block py-2 text-sm hover:text-[#E6007E] transition-colors"
                               onClick={() => setIsMobileMenuOpen(false)}
                             >
-                              {brasItem}
+                              {brasItem.name}
                             </Link>
                           ))}
                         </div>

@@ -1,0 +1,120 @@
+media:
+  input: public/uploads/products
+  output: /uploads/products
+
+content:
+  - name: products
+    label: Products
+    type: collection
+    path: content/products
+    format: yaml-frontmatter
+    filename: "{primary}.md"
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: slug
+        label: Slug
+        type: string
+        primary: true
+        required: true
+      - name: category
+        label: Category
+        type: select
+        options:
+          values:
+            - bras
+            - panties
+            - shapewear
+            - sports-bras
+        required: true
+      - name: price
+        label: Price (KSh)
+        type: number
+        required: true
+      - name: salePrice
+        label: Sale Price (KSh)
+        type: number
+      - name: featured
+        label: Featured on Homepage
+        type: boolean
+        default: false
+      - name: description
+        label: Short Description
+        type: text
+        required: true
+      - name: images
+        label: Images
+        type: image
+        list: true
+      - name: features
+        label: Features
+        type: string
+        list: true
+      - name: colors
+        label: Colors
+        type: object
+        list: true
+        fields:
+          - name: name
+            type: string
+          - name: hex
+            type: string
+      - name: bandSizes
+        label: Band Sizes
+        type: number
+        list: true
+      - name: cupSizes
+        label: Cup Sizes
+        type: string
+        list: true
+      - name: body
+        label: Full Description
+        type: rich-text
+
+  - name: categories
+    label: Category Pages
+    type: collection
+    path: content/categories
+    format: yaml-frontmatter
+    filename: "{primary}.md"
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: slug
+        label: Slug
+        type: string
+        primary: true
+        required: true
+      - name: description
+        label: Description
+        type: text
+      - name: body
+        label: Page Content
+        type: rich-text
+
+  - name: pages
+    label: Info Pages
+    type: collection
+    path: content/pages
+    format: yaml-frontmatter
+    filename: "{primary}.md"
+    fields:
+      - name: title
+        label: Title
+        type: string
+        required: true
+      - name: slug
+        label: Slug
+        type: string
+        primary: true
+        required: true
+      - name: description
+        label: Description
+        type: text
+      - name: body
+        label: Page Content
+        type: rich-text

@@ -51,7 +51,7 @@ export default function CategoryCards() {
 
           {/* Sportswear Card */}
           <Link 
-            href="/sports-bras"
+            href="/bras"
             className="group relative aspect-[4/3] rounded-lg shadow-md hover:shadow-xl hover:scale-105 transition-all duration-300 overflow-hidden"
           >
             <Image
