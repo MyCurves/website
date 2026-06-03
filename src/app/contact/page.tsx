@@ -48,7 +48,7 @@ export default function ContactPage() {
               Get In Touch
             </h1>
             <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
-              We're here to help you find your perfect fit
+              We&apos;re here to help you find your perfect fit
             </p>
           </div>
         </section>
@@ -169,13 +169,13 @@ export default function ContactPage() {
                   Send Us a Message
                 </h2>
                 <p className="text-gray-600 mb-8 text-center">
-                  We'll get back to you within 24 hours
+                  We&apos;ll get back to you within 24 hours
                 </p>
 
                 {submitStatus === 'success' && (
                   <div className="mb-6 p-4 bg-green-50 border border-green-200 rounded-lg">
                     <p className="text-green-800 text-center font-medium">
-                      Thank you for your message! We'll get back to you soon.
+                      Thank you for your message! We&apos;ll get back to you soon.
                     </p>
                   </div>
                 )}

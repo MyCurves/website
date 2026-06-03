@@ -1,7 +1,6 @@
 import { Header } from "@/components/Header";
 import Footer from "@/components/Footer";
 import Link from "next/link";
-import Image from "next/image";
 
 export default function OurStory() {
   return (
@@ -63,7 +62,7 @@ export default function OurStory() {
                 {/* Quote Callout */}
                 <div className="mt-8 bg-pink-50 border-l-4 border-[#E6007E] rounded-r-lg p-6">
                   <blockquote className="text-lg md:text-xl font-heading text-gray-900 italic">
-                    "My biggest problem became my goldmine"
+                    &ldquo;My biggest problem became my goldmine&rdquo;
                   </blockquote>
                   <p className="text-sm text-gray-600 mt-2">— Wendy Karira, Founder</p>
                 </div>
@@ -211,7 +210,7 @@ export default function OurStory() {
                   Premium Brands
                 </h3>
                 <p className="text-gray-600">
-                  Curated selection of the world's finest lingerie brands
+                  Curated selection of the world&apos;s finest lingerie brands
                 </p>
               </div>
             </div>

@@ -23,19 +23,18 @@ export default function HeroSlider() {
     [emblaApi]
   );
 
-  const onSelect = useCallback(() => {
-    if (!emblaApi) return;
-    setSelectedIndex(emblaApi.selectedScrollSnap());
-  }, [emblaApi]);
-
   useEffect(() => {
     if (!emblaApi) return;
-    onSelect();
-    emblaApi.on('select', onSelect);
-    return () => {
-      emblaApi.off('select', onSelect);
+
+    const syncSelectedIndex = () => {
+      setSelectedIndex(emblaApi.selectedScrollSnap());
     };
-  }, [emblaApi, onSelect]);
+
+    emblaApi.on('select', syncSelectedIndex);
+    return () => {
+      emblaApi.off('select', syncSelectedIndex);
+    };
+  }, [emblaApi]);
 
   // Auto-advance every 5 seconds
   useEffect(() => {

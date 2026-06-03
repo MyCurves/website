@@ -62,7 +62,7 @@ async function downloadBatch(urls, subdir, batchSize = 4) {
   
   for (let i = 0; i < urls.length; i += batchSize) {
     const batch = urls.slice(i, i + batchSize);
-    const promises = batch.map((url, idx) => {
+    const promises = batch.map((url) => {
       const filename = basename(new URL(url).pathname);
       const outputPath = join(PUBLIC_DIR, subdir, filename);
       return downloadAsset(url, outputPath);

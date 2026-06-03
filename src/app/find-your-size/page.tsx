@@ -1,6 +1,5 @@
 import { Header } from "@/components/Header";
 import Footer from "@/components/Footer";
-import Link from "next/link";
 
 export default function FindYourSize() {
   return (
@@ -40,7 +39,7 @@ export default function FindYourSize() {
                 <p className="text-gray-700 leading-relaxed">
                   Wrap a soft measuring tape snugly around your ribcage, directly under your bust. 
                   Make sure the tape is level and parallel to the floor. Round to the nearest whole number. 
-                  If it's an odd number, round up to the next even number.
+                  If it&apos;s an odd number, round up to the next even number.
                 </p>
               </div>
 
@@ -54,7 +53,7 @@ export default function FindYourSize() {
                 </h3>
                 <p className="text-gray-700 leading-relaxed">
                   Measure around the fullest part of your bust. Keep the tape level and make sure 
-                  it's not too tight or too loose. Stand up straight and breathe normally. 
+                  it&apos;s not too tight or too loose. Stand up straight and breathe normally. 
                   Round to the nearest whole number.
                 </p>
               </div>
@@ -189,7 +188,7 @@ export default function FindYourSize() {
                   </li>
                   <li className="flex items-start">
                     <span className="text-[#E6007E] mr-2">•</span>
-                    <span>Center gore doesn't lie flat</span>
+                    <span>Center gore doesn&apos;t lie flat</span>
                   </li>
                   <li className="flex items-start">
                     <span className="text-[#E6007E] mr-2">•</span>
@@ -264,8 +263,8 @@ export default function FindYourSize() {
               </h3>
               <p className="text-gray-700 leading-relaxed">
                 Always try bras on the loosest hook. As the band stretches with wear, you can tighten 
-                to the middle and tightest hooks to extend the life of your bra. When you're using the 
-                tightest hook regularly, it's time for a new bra!
+                to the middle and tightest hooks to extend the life of your bra. When you&apos;re using the 
+                tightest hook regularly, it&apos;s time for a new bra!
               </p>
             </div>
           </div>
