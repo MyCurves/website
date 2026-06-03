@@ -30,8 +30,11 @@ if (!match) {
   process.exit(1);
 }
 
+const frontmatter = match[1];
 const body = match[2];
 const shortDesc = 'Reverse-engineer and clone any website as a pixel-perfect replica';
+const descMatch = frontmatter.match(/^description:\s*(.+)$/m);
+const skillDesc = descMatch ? descMatch[1].trim() : shortDesc;
 
 // --- Helpers ---
 
@@ -59,8 +62,14 @@ write('.codex/skills/clone-website/SKILL.md', raw);
 // 2. GitHub Copilot — same SKILL.md format
 write('.github/skills/clone-website/SKILL.md', raw);
 
-// 3. Cursor — plain markdown, no argument substitution support
+// 3. Cursor — slash command (plain markdown, no argument substitution support)
 write('.cursor/commands/clone-website.md', HEADER + noArgs(body));
+
+// 3b. Cursor Agent Skill — SKILL.md with YAML frontmatter for skill discovery
+write(
+  '.cursor/skills/clone-website/SKILL.md',
+  `---\nname: clone-website\ndescription: ${JSON.stringify(skillDesc)}\n---\n\n${noArgs(body.trimStart())}`
+);
 
 // 4. Windsurf — markdown workflow
 write('.windsurf/workflows/clone-website.md', HEADER + noArgs(body));
@@ -109,4 +118,4 @@ write(
   ) + '\n'
 );
 
-console.log('\nDone! 9 platform command files generated from source skill.');
+console.log('\nDone! 10 platform command/skill files generated from source skill.');
