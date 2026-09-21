@@ -36,10 +36,10 @@
 - Heading: "Contact Info"
 - **My Curves Kenya - Sarit Centre**
   - Phone: +254 746 844 227
-  - Email: hello@lovingmycurves.com
+  - Email: info@lovingmycurves.com
 - **My Curves Kenya - Yaya Centre**
   - Phone: +254 703 844 227
-  - Email: hello@lovingmycurves.com
+  - Email: info@lovingmycurves.com
 
 ## Social Media Section
 - Heading: "Our Social Media"

@@ -20,4 +20,4 @@ Do you deliver?
 Yes. See our Deliveries page for details.
 
 How can I contact you?
-Call Sarit Centre at +254 746 844 227 or Yaya Centre at +254 703 844 227, email hello@lovingmycurves.com, or use our Contact page.
+Call Sarit Centre at +254 746 844 227 or Yaya Centre at +254 703 844 227, email info@lovingmycurves.com, or use our Contact page.

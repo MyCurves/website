@@ -129,10 +129,10 @@ export default function Footer() {
                 <p className="text-sm">
                   Email:{' '}
                   <a
-                    href="mailto:hello@lovingmycurves.com"
+                    href="mailto:info@lovingmycurves.com"
                     className="hover:text-primary transition"
                   >
-                    hello@lovingmycurves.com
+                    info@lovingmycurves.com
                   </a>
                 </p>
               </div>
@@ -142,10 +142,10 @@ export default function Footer() {
                 <p className="text-sm">
                   Email:{' '}
                   <a
-                    href="mailto:hello@lovingmycurves.com"
+                    href="mailto:info@lovingmycurves.com"
                     className="hover:text-primary transition"
                   >
-                    hello@lovingmycurves.com
+                    info@lovingmycurves.com
                   </a>
                 </p>
               </div>

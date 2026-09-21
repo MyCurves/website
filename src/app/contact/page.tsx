@@ -19,7 +19,7 @@ import { buildWhatsAppUrl } from '@/lib/whatsapp';
 export const metadata = createPageMetadata({
   title: 'Contact MyCurves Nairobi',
   description:
-    'Contact MyCurves at Sarit Centre (Westlands) or Yaya Centre (Kilimani). Phone, WhatsApp, email hello@lovingmycurves.com. Mon–Sat 10–7, Sun 10–6.',
+    'Contact MyCurves at Sarit Centre (Westlands) or Yaya Centre (Kilimani). Phone, WhatsApp, email info@lovingmycurves.com. Mon–Sat 10–7, Sun 10–6.',
   path: '/contact',
 });
 
@@ -86,10 +86,10 @@ export default function ContactPage() {
                       {store.phone}
                     </a>
                     <a
-                      href="mailto:hello@lovingmycurves.com"
+                      href="mailto:info@lovingmycurves.com"
                       className="block text-gray-700 hover:text-[#E6007E] transition-colors"
                     >
-                      hello@lovingmycurves.com
+                      info@lovingmycurves.com
                     </a>
                     <div className="pt-4 border-t">
                       <p className="text-gray-700 font-semibold mb-1">Opening Hours</p>

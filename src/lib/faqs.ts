@@ -75,7 +75,7 @@ export const CONTACT_FAQS: FaqItem[] = [
   {
     question: "Can I email instead of WhatsApp?",
     answer:
-      "Yes, email hello@lovingmycurves.com for general enquiries. For fastest stock and size checks, WhatsApp is best because our boutique teams respond during store hours.",
+      "Yes, email info@lovingmycurves.com for general enquiries. For fastest stock and size checks, WhatsApp is best because our boutique teams respond during store hours.",
   },
   {
     question: "Do both stores carry the same products?",

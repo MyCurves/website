@@ -20,6 +20,6 @@ Prefer to try before you buy? Order online and collect at:
 
 ## International Shipping
 
-International shipping may be available for select orders. Email hello@lovingmycurves.com for a quote.
+International shipping may be available for select orders. Email info@lovingmycurves.com for a quote.
 
 For order enquiries, [contact us](/contact) or message us on WhatsApp.
