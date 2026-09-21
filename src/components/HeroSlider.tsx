@@ -58,13 +58,18 @@ export default function HeroSlider() {
       {/* Embla Viewport */}
       <div className="h-full" ref={emblaRef}>
         <div className="flex h-full">
-          {slides.map((slide, index) => (
+          {slides.map((slide, index) => {
+            const isActive = selectedIndex === index;
+
+            return (
             <div
               key={index}
-              className="relative flex-[0_0_100%] min-w-0 h-full transition-opacity duration-1000"
+              className={`relative flex-[0_0_100%] min-w-0 h-full transition-opacity duration-1000${isActive ? '' : ' pointer-events-none'}`}
               style={{
-                opacity: selectedIndex === index ? 1 : 0,
+                opacity: isActive ? 1 : 0,
               }}
+              aria-hidden={!isActive}
+              inert={!isActive ? true : undefined}
             >
               {/* Image */}
               <Image
@@ -113,7 +118,8 @@ export default function HeroSlider() {
                 </div>
               </div>
             </div>
-          ))}
+            );
+          })}
         </div>
       </div>
 
