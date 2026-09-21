@@ -3,6 +3,7 @@ import HeroSlider from "@/components/HeroSlider";
 import MissionStatement from "@/components/MissionStatement";
 import CategoryCards from "@/components/CategoryCards";
 import FeaturedProducts from "@/components/FeaturedProducts";
+import { PressSection } from "@/components/PressSection";
 import Footer from "@/components/Footer";
 import { FaqSection } from "@/components/FaqSection";
 import { JsonLd } from "@/components/JsonLd";
@@ -28,6 +29,7 @@ export default function Home() {
       <main className="flex-1">
         <HeroSlider />
         <MissionStatement />
+        <PressSection variant="strip" />
         <CategoryCards />
         <FeaturedProducts products={featuredProducts} />
         <FaqSection faqs={HOME_FAQS} className="bg-gray-50" />

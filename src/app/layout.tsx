@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Montserrat, Open_Sans } from "next/font/google";
 import { JsonLd } from "@/components/JsonLd";
+import { GoogleAnalytics } from "@/components/GoogleAnalytics";
 import { WhatsAppFab } from "@/components/WhatsAppFab";
 import {
   SITE,
@@ -56,6 +57,7 @@ export default function RootLayout({
             buildLocalBusinessSchema("yaya"),
           ]}
         />
+        <GoogleAnalytics />
         {children}
         <WhatsAppFab />
       </body>

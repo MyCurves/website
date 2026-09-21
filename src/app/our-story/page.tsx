@@ -3,6 +3,7 @@ import { Header } from "@/components/Header";
 import Footer from "@/components/Footer";
 import { JsonLd } from "@/components/JsonLd";
 import Link from "next/link";
+import { PressSection } from "@/components/PressSection";
 import { buildPersonSchema, createPageMetadata } from "@/lib/seo";
 
 export const metadata = createPageMetadata({
@@ -85,6 +86,8 @@ export default function OurStory() {
             </div>
           </div>
         </section>
+
+        <PressSection variant="full" />
 
         {/* Mission Section */}
         <section className="py-16 px-6 bg-gradient-to-r from-pink-50 to-pink-100">
