@@ -41,3 +41,24 @@ export const BIKOZULU_PULL_QUOTE =
   "It's important for confidence, posture and comfort.";
 
 export const INSTAGRAM_PROFILE_URL = "https://www.instagram.com/mycurveskenya/";
+
+/** Wendy’s July 2026 founder reflection — dream began 2017, links Bikozulu article. */
+export const INSTAGRAM_FOUNDER_STORY_URL =
+  "https://www.instagram.com/p/DbY6Ov3OzA4/";
+
+export interface InstagramPostLink {
+  url: string;
+  label: string;
+}
+
+/** Optional secondary posts for Our Story “More from Instagram”. */
+export const INSTAGRAM_MORE_POSTS: InstagramPostLink[] = [
+  {
+    url: "https://www.instagram.com/p/DbfT4yPObPy/",
+    label: "Cheers to 50",
+  },
+  {
+    url: "https://www.instagram.com/p/DddZz-sDn70/",
+    label: "Founder birthday bra post",
+  },
+];
