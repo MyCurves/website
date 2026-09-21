@@ -159,6 +159,7 @@ export function toListingProduct(product: Product): ProductListingItem {
     image: product.images[0] ?? "/images/categories/Bras-1.jpg",
     slug: product.slug,
     category: product.category,
+    featured: product.featured,
     colors: product.colors.map((color) => color.name),
     description: product.description,
     features: product.features,

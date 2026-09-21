@@ -37,6 +37,8 @@ const FOLDER_CONFIG = [
     category: "bras",
     color: "Black",
     featured: true,
+    price: 5900,
+    priceNote: "Limited sizes available — please contact the branches.",
   },
   {
     folder: "Curvy Kate Spotlight",
@@ -44,6 +46,7 @@ const FOLDER_CONFIG = [
     category: "bras",
     color: "Black",
     featured: true,
+    price: 6500,
   },
   {
     folder: "Curvy Kate Zen",
@@ -51,6 +54,7 @@ const FOLDER_CONFIG = [
     category: "bras",
     color: "Black",
     featured: false,
+    price: 4900,
   },
   {
     folder: "CurvyKate Sports Bra",
@@ -58,6 +62,7 @@ const FOLDER_CONFIG = [
     category: "sports-bras",
     color: "Black",
     featured: true,
+    price: 8500,
   },
   {
     folder: "Panache 365 Black",
@@ -65,6 +70,8 @@ const FOLDER_CONFIG = [
     category: "bras",
     color: "Black",
     featured: false,
+    price: 7700,
+    priceNote: "Limited sizes available — please contact the branches.",
   },
   {
     folder: "Panache 365 Lipstick",
@@ -72,6 +79,8 @@ const FOLDER_CONFIG = [
     category: "bras",
     color: "Lipstick",
     featured: false,
+    price: 7700,
+    priceNote: "Limited sizes available — please contact the branches.",
   },
   {
     folder: "Panache Black Activate Sports Bra",
@@ -79,6 +88,7 @@ const FOLDER_CONFIG = [
     category: "sports-bras",
     color: "Black",
     featured: false,
+    price: 7900,
   },
   {
     folder: "Panache Estel Navy",
@@ -86,6 +96,8 @@ const FOLDER_CONFIG = [
     category: "bras",
     color: "Navy",
     featured: false,
+    price: 8900,
+    priceNote: "Matching brief: KSh 4,500",
   },
   {
     folder: "Panache Nina",
@@ -93,6 +105,7 @@ const FOLDER_CONFIG = [
     category: "bras",
     color: "Black Leopard",
     featured: false,
+    price: 6900,
   },
   {
     folder: "Panache Sophia Plunge Bra",
@@ -100,6 +113,8 @@ const FOLDER_CONFIG = [
     category: "bras",
     color: "Sienna Rose",
     featured: true,
+    price: 8700,
+    priceNote: "Matching brief: KSh 4,300",
   },
 ];
 
@@ -183,6 +198,15 @@ function toFrontmatter(product) {
   lines.push(`brand: ${JSON.stringify(product.brand)}`);
   lines.push(`category: ${JSON.stringify(product.category)}`);
   lines.push(`featured: ${product.featured}`);
+  if (product.price !== undefined) {
+    lines.push(`price: ${product.price}`);
+  }
+  if (product.salePrice !== undefined) {
+    lines.push(`salePrice: ${product.salePrice}`);
+  }
+  if (product.priceNote) {
+    lines.push(`priceNote: ${JSON.stringify(product.priceNote)}`);
+  }
   lines.push(`description: ${JSON.stringify(product.description)}`);
 
   if (product.images.length) {
@@ -285,6 +309,9 @@ function main() {
       brand,
       category: config.category,
       featured: config.featured,
+      price: config.price,
+      salePrice: config.salePrice,
+      priceNote: config.priceNote,
       description: parsed.shortDescription,
       body: parsed.body,
       features: parsed.bullets.slice(0, 12),

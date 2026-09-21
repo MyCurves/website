@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { ChevronLeft, ChevronRight, Filter, Search, X } from 'lucide-react';
 import { PriceDisplay } from '@/components/PriceDisplay';
@@ -43,6 +43,18 @@ export default function ProductListing({
   const [maxPrice, setMaxPrice] = useState('');
   const [sortBy, setSortBy] = useState<SortOption>('featured');
   const productsPerPage = 9;
+
+  useEffect(() => {
+    const search = searchParams.get('search') ?? '';
+    const category =
+      (searchParams.get('category') as ProductCategory | null) ??
+      defaultCategory ??
+      'all';
+
+    setSearchQuery(search);
+    setSelectedCategory(category);
+    setCurrentPage(1);
+  }, [searchParams, defaultCategory]);
 
   const brands = useMemo(
     () => [...new Set(products.map((product) => product.brand))].sort(),
@@ -121,7 +133,12 @@ export default function ProductListing({
         return (bPrice ?? 0) - (aPrice ?? 0);
       }
 
-      return a.title.localeCompare(b.title);
+      if (sortBy === 'featured') {
+        if (a.featured === b.featured) return 0;
+        return a.featured ? -1 : 1;
+      }
+
+      return 0;
     });
 
     return result;

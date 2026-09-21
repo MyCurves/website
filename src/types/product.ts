@@ -32,6 +32,7 @@ export interface ProductListingItem {
   image: string;
   slug: string;
   category: ProductCategory;
+  featured: boolean;
   colors: string[];
   description: string;
   features: string[];
