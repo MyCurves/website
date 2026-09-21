@@ -61,14 +61,31 @@ function parseProduct(slug: string, raw: string): Product {
     images.push(String(data.image));
   }
 
+  const price =
+    data.price !== undefined && data.price !== null && data.price !== ""
+      ? Number(data.price)
+      : undefined;
+  const salePrice =
+    data.salePrice !== undefined && data.salePrice !== null && data.salePrice !== ""
+      ? Number(data.salePrice)
+      : undefined;
+
+  const title = String(data.title ?? slug);
+  const brand = String(
+    data.brand ?? title.split(" ")[0] ?? "MyCurves"
+  );
+
   return {
     slug: String(data.slug ?? slug),
-    title: String(data.title ?? slug),
+    title,
+    brand,
     category: String(data.category ?? "bras") as ProductCategory,
-    price: Number(data.price ?? 0),
+    price: price !== undefined && !Number.isNaN(price) ? price : undefined,
     salePrice:
-      data.salePrice !== undefined && data.salePrice !== null
-        ? Number(data.salePrice)
+      salePrice !== undefined && !Number.isNaN(salePrice) ? salePrice : undefined,
+    priceNote:
+      data.priceNote !== undefined && data.priceNote !== null
+        ? String(data.priceNote)
         : undefined,
     featured: Boolean(data.featured),
     description: String(data.description ?? ""),
@@ -117,7 +134,10 @@ export function getFeaturedProducts(limit = 3): Product[] {
 
 export function getOnSaleProducts(): Product[] {
   return getAllProducts().filter(
-    (product) => product.salePrice !== undefined && product.salePrice > 0
+    (product) =>
+      product.salePrice !== undefined &&
+      product.salePrice !== null &&
+      product.salePrice > 0
   );
 }
 
@@ -133,12 +153,42 @@ export function toListingProduct(product: Product): ProductListingItem {
   return {
     id: product.slug,
     title: product.title,
+    brand: product.brand,
     price: product.price,
     salePrice: product.salePrice,
     image: product.images[0] ?? "/images/categories/Bras-1.jpg",
     slug: product.slug,
     category: product.category,
+    featured: product.featured,
+    colors: product.colors.map((color) => color.name),
+    description: product.description,
+    features: product.features,
   };
+}
+
+export function searchProducts(query: string, products: Product[]): Product[] {
+  const normalized = query.trim().toLowerCase();
+  if (!normalized) return products;
+
+  return products.filter((product) => {
+    const haystack = [
+      product.title,
+      product.brand,
+      product.description,
+      product.body,
+      product.category,
+      ...product.features,
+      ...product.colors.map((color) => color.name),
+    ]
+      .join(" ")
+      .toLowerCase();
+
+    return haystack.includes(normalized);
+  });
+}
+
+export function getUniqueBrands(products: Product[]): string[] {
+  return [...new Set(products.map((product) => product.brand))].sort();
 }
 
 export function toListingProducts(products: Product[]): ProductListingItem[] {

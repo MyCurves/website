@@ -1,10 +1,25 @@
+import Image from "next/image";
 import { Header } from "@/components/Header";
 import Footer from "@/components/Footer";
+import { JsonLd } from "@/components/JsonLd";
 import Link from "next/link";
+import { BookFittingButton } from "@/components/BookFittingButton";
+import { PressSection } from "@/components/PressSection";
+import { TestimonialsSection } from "@/components/TestimonialsSection";
+import { buildPersonSchema, createPageMetadata } from "@/lib/seo";
+
+export const metadata = createPageMetadata({
+  title: "Our Story — Wendy Karira & MyCurves",
+  description:
+    "How Wendy Karira founded MyCurves (Loving My Curves) to bring expert plus-size bra fitting and premium lingerie to Nairobi.",
+  path: "/our-story",
+  image: "/images/about/wendy-karira.jpg",
+});
 
 export default function OurStory() {
   return (
     <div className="min-h-screen flex flex-col">
+      <JsonLd data={buildPersonSchema()} />
       <Header />
       
       <main className="flex-1 mt-[129px]">
@@ -24,17 +39,20 @@ export default function OurStory() {
         <section className="py-16 px-6 bg-white">
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              {/* Image Placeholder */}
               <div className="order-2 lg:order-1">
-                <div className="bg-gradient-to-br from-pink-100 to-pink-200 rounded-lg aspect-square flex items-center justify-center">
-                  <div className="text-center p-8">
-                    <div className="w-32 h-32 bg-white rounded-full mx-auto mb-4 flex items-center justify-center">
-                      <span className="text-4xl">👤</span>
-                    </div>
-                    <p className="text-gray-600 text-sm">Founder Photo</p>
-                    <p className="text-gray-500 text-xs mt-1">Wendy Karira</p>
-                  </div>
+                <div className="relative aspect-[4/5] rounded-lg overflow-hidden shadow-lg">
+                  <Image
+                    src="/images/about/wendy-karira.jpg"
+                    alt="Wendy Karira, Founder of MyCurves"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    priority
+                  />
                 </div>
+                <p className="text-sm text-gray-500 mt-3 text-center">
+                  Wendy Karira, Founder of MyCurves
+                </p>
               </div>
 
               {/* Story Content */}
@@ -70,6 +88,21 @@ export default function OurStory() {
             </div>
           </div>
         </section>
+
+        <PressSection variant="full" />
+
+        <section className="py-12 px-6 bg-white text-center">
+          <h2 className="text-2xl md:text-3xl font-heading font-bold text-gray-900 mb-4">
+            Experience the MyCurves fitting
+          </h2>
+          <p className="text-gray-600 max-w-xl mx-auto mb-6">
+            Free professional bra fittings at Sarit Centre and Yaya Centre — message us on
+            WhatsApp to book your visit.
+          </p>
+          <BookFittingButton />
+        </section>
+
+        <TestimonialsSection variant="compact" limit={3} />
 
         {/* Mission Section */}
         <section className="py-16 px-6 bg-gradient-to-r from-pink-50 to-pink-100">

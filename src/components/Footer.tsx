@@ -1,5 +1,6 @@
 import Link from 'next/link';
-import { FacebookIcon, InstagramIcon, PinterestIcon } from '@/components/icons';
+import { FacebookIcon, InstagramIcon } from '@/components/icons';
+import { SOCIAL_LINKS } from '@/lib/social';
 
 export default function Footer() {
   return (
@@ -43,6 +44,14 @@ export default function Footer() {
                   className="text-sm hover:text-primary transition"
                 >
                   Testimonials
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/guides"
+                  className="text-sm hover:text-primary transition"
+                >
+                  Fitting Guides
                 </Link>
               </li>
             </ul>
@@ -153,7 +162,7 @@ export default function Footer() {
             <p className="text-sm mb-4">Connect with us on social media</p>
             <div className="flex justify-center items-center space-x-6">
               <a
-                href="https://www.facebook.com/lovingmycurves"
+                href={SOCIAL_LINKS.facebook}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-primary transition"
@@ -162,22 +171,13 @@ export default function Footer() {
                 <FacebookIcon className="h-6 w-6" />
               </a>
               <a
-                href="https://www.instagram.com/lovingmycurves"
+                href={SOCIAL_LINKS.instagram}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-primary transition"
                 aria-label="Instagram"
               >
                 <InstagramIcon className="h-6 w-6" />
-              </a>
-              <a
-                href="https://www.pinterest.com/lovingmycurves"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-gray-400 hover:text-primary transition"
-                aria-label="Pinterest"
-              >
-                <PinterestIcon className="h-6 w-6" />
               </a>
             </div>
           </div>

@@ -1,7 +1,7 @@
 ---
 title: Panties
 slug: panties
-description: Comfortable panties in all sizes and styles
+description: Comfortable plus-size panties and briefs at MyCurves Nairobi.
 ---
 
-From everyday cotton briefs to lace styles — comfortable panties in all sizes.
+MyCurves stocks coordinating briefs and panties to match our bra collections. Ask on WhatsApp or visit Sarit or Yaya to see current styles, colours, and sizes in store.

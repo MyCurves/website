@@ -1,5 +1,14 @@
 import type { Metadata } from "next";
 import { Montserrat, Open_Sans } from "next/font/google";
+import { JsonLd } from "@/components/JsonLd";
+import { GoogleAnalytics } from "@/components/GoogleAnalytics";
+import { WhatsAppFab } from "@/components/WhatsAppFab";
+import {
+  SITE,
+  buildLocalBusinessSchema,
+  buildOrganizationSchema,
+  createPageMetadata,
+} from "@/lib/seo";
 import "./globals.css";
 
 const montserrat = Montserrat({
@@ -15,8 +24,12 @@ const openSans = Open_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Loving My Curves - All your bra needs including plus size bras",
-  description: "We are a community that seeks to make women of all shapes and sizes love their bodies by knowing and wearing the right size of Bras and Underwear.",
+  ...createPageMetadata({
+    title: "Plus-Size Bras & Lingerie in Nairobi",
+    description: SITE.description,
+    path: "/",
+  }),
+  metadataBase: new URL(SITE.url),
   icons: {
     icon: [
       { url: "/seo/cropped-fav-curve-32x32.png", sizes: "32x32" },
@@ -36,7 +49,18 @@ export default function RootLayout({
       lang="en"
       className={`${montserrat.variable} ${openSans.variable} h-full antialiased`}
     >
-      <body className="min-h-full flex flex-col font-body">{children}</body>
+      <body className="min-h-full flex flex-col font-body">
+        <JsonLd
+          data={[
+            buildOrganizationSchema(),
+            buildLocalBusinessSchema("sarit"),
+            buildLocalBusinessSchema("yaya"),
+          ]}
+        />
+        <GoogleAnalytics />
+        {children}
+        <WhatsAppFab />
+      </body>
     </html>
   );
 }

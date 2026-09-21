@@ -3,6 +3,8 @@
 import { useCallback, useEffect, useState } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import Image from 'next/image';
+import Link from 'next/link';
+import { BookFittingButton } from '@/components/BookFittingButton';
 
 const slides = [
   { src: '/images/hero/D0308445-1-1.jpg', alt: 'Hero Slide 1' },
@@ -56,13 +58,18 @@ export default function HeroSlider() {
       {/* Embla Viewport */}
       <div className="h-full" ref={emblaRef}>
         <div className="flex h-full">
-          {slides.map((slide, index) => (
+          {slides.map((slide, index) => {
+            const isActive = selectedIndex === index;
+
+            return (
             <div
               key={index}
-              className="relative flex-[0_0_100%] min-w-0 h-full transition-opacity duration-1000"
+              className={`relative flex-[0_0_100%] min-w-0 h-full transition-opacity duration-1000${isActive ? '' : ' pointer-events-none'}`}
               style={{
-                opacity: selectedIndex === index ? 1 : 0,
+                opacity: isActive ? 1 : 0,
               }}
+              aria-hidden={!isActive}
+              inert={!isActive ? true : undefined}
             >
               {/* Image */}
               <Image
@@ -90,17 +97,29 @@ export default function HeroSlider() {
                     EMBRACE YOUR CURVES
                   </h1>
                   <p
-                    className="text-xl md:text-2xl lg:text-3xl font-montserrat"
+                    className="text-xl md:text-2xl lg:text-3xl font-montserrat mb-8"
                     style={{
                       textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)',
                     }}
                   >
                     FALL IN LOVE WITH YOURSELF
                   </p>
+                  <div className="flex flex-col sm:flex-row gap-3">
+                    <Link
+                      href="/bras"
+                      className="inline-flex items-center justify-center rounded-lg bg-[#E6007E] px-6 py-3 font-montserrat font-semibold text-white shadow-md transition-colors hover:bg-[#c50069]"
+                    >
+                      Shop bras
+                    </Link>
+                    <BookFittingButton variant="secondary">
+                      Book a free fitting
+                    </BookFittingButton>
+                  </div>
                 </div>
               </div>
             </div>
-          ))}
+            );
+          })}
         </div>
       </div>
 
