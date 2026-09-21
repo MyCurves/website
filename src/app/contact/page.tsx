@@ -6,7 +6,12 @@ import { JsonLd } from '@/components/JsonLd';
 import { FacebookIcon, InstagramIcon, WhatsAppIcon } from '@/components/icons';
 import { CONTACT_FAQS } from '@/lib/faqs';
 import { SOCIAL_LINKS } from '@/lib/social';
-import { buildFaqPageSchema, createPageMetadata } from '@/lib/seo';
+import {
+  SARIT_GOOGLE_MAPS_URL,
+  STORE_LOCATIONS,
+  buildFaqPageSchema,
+  createPageMetadata,
+} from '@/lib/seo';
 import { buildWhatsAppUrl } from '@/lib/whatsapp';
 
 export const metadata = createPageMetadata({
@@ -19,17 +24,21 @@ export const metadata = createPageMetadata({
 const stores = [
   {
     name: 'Sarit Centre',
-    address: 'Sarit Centre, Westlands, Nairobi',
+    subtitle: STORE_LOCATIONS.sarit.name,
+    address: STORE_LOCATIONS.sarit.formattedAddress,
     phone: '+254 746 844 227',
     phoneHref: 'tel:+254746844227',
     whatsapp: '254746844227',
+    mapsUrl: SARIT_GOOGLE_MAPS_URL,
   },
   {
     name: 'Yaya Centre',
-    address: 'Yaya Centre, Kilimani, Nairobi',
+    subtitle: STORE_LOCATIONS.yaya.name,
+    address: `${STORE_LOCATIONS.yaya.streetAddress}, ${STORE_LOCATIONS.yaya.addressLocality}, Kenya`,
     phone: '+254 703 844 227',
     phoneHref: 'tel:+254703844227',
     whatsapp: '254703844227',
+    mapsUrl: undefined,
   },
 ];
 
@@ -59,9 +68,12 @@ export default function ContactPage() {
                   key={store.name}
                   className="bg-white rounded-lg shadow-lg p-8 border border-gray-100 hover:shadow-xl transition-shadow"
                 >
-                  <h2 className="text-2xl font-heading font-bold text-gray-900 mb-6">
+                  <h2 className="text-2xl font-heading font-bold text-gray-900 mb-1">
                     {store.name}
                   </h2>
+                  {store.subtitle && (
+                    <p className="text-sm text-gray-500 mb-4">{store.subtitle}</p>
+                  )}
                   <div className="space-y-4">
                     <p className="text-gray-700">{store.address}</p>
                     <a
@@ -100,6 +112,16 @@ export default function ContactPage() {
                       >
                         Call store
                       </a>
+                      {store.mapsUrl && (
+                        <a
+                          href={store.mapsUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 border border-gray-300 text-gray-800 font-semibold py-3 px-5 rounded-lg hover:border-[#E6007E] hover:text-[#E6007E] transition-colors"
+                        >
+                          Open in Google Maps
+                        </a>
+                      )}
                     </div>
                   </div>
                 </div>

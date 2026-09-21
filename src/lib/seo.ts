@@ -3,6 +3,10 @@ import type { Product } from "@/types/product";
 import { hasProductPrice } from "@/lib/format-price";
 import { SOCIAL_LINKS } from "@/lib/social";
 
+/** Confirmed Google Maps listing for MyCurves Bra Shop — Sarit Centre. */
+export const SARIT_GOOGLE_MAPS_URL =
+  "https://www.google.com/maps/place/MyCurves+Bra+Shop/@-1.2611605,36.8019777,17z/data=!3m1!4b1!4m6!3m5!1s0x182f17fc87f3e3bd:0xd313f2f983642f4!8m2!3d-1.2611605!4d36.8019777!16s%2Fg%2F11d_28yx1b";
+
 export const SITE = {
   name: "MyCurves",
   legalName: "Loving My Curves",
@@ -17,9 +21,9 @@ export const SITE = {
     yaya: "+254703844227",
   },
   defaultOgImage: "/images/categories/Bras-1.jpg",
-  // TODO: Wire Google Business Profile URLs when Mathenge provides profile links/IDs.
   googleBusinessProfileUrls: {
-    sarit: undefined as string | undefined,
+    sarit: SARIT_GOOGLE_MAPS_URL,
+    // No separate Yaya GBP yet — create/claim when a listing is available.
     yaya: undefined as string | undefined,
   },
 } as const;
@@ -27,12 +31,17 @@ export const SITE = {
 export const STORE_LOCATIONS = {
   sarit: {
     id: "sarit-centre",
-    name: "MyCurves — Sarit Centre",
-    streetAddress: "Sarit Centre",
-    addressLocality: "Westlands",
+    name: "MyCurves Bra Shop",
+    formattedAddress: "Sarit Centre, Karuna Rd, Nairobi, Kenya",
+    streetAddress: "Sarit Centre, Karuna Rd",
+    addressLocality: "Nairobi",
     addressRegion: "Nairobi",
     addressCountry: "KE",
     phone: SITE.phones.sarit,
+    geo: {
+      latitude: -1.2611605,
+      longitude: 36.8019777,
+    },
     openingHours: [
       { dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"], opens: "10:00", closes: "19:00" },
       { dayOfWeek: ["Sunday"], opens: "10:00", closes: "18:00" },
@@ -134,7 +143,7 @@ export function buildOrganizationSchema() {
   const sameAs = [
     SOCIAL_LINKS.instagram,
     SOCIAL_LINKS.facebook,
-    // TODO: Append SITE.googleBusinessProfileUrls.sarit/yaya when available.
+    SITE.googleBusinessProfileUrls.sarit,
   ].filter(Boolean);
 
   return {
@@ -160,6 +169,14 @@ export function buildLocalBusinessSchema(location: keyof typeof STORE_LOCATIONS)
     location === "sarit"
       ? SITE.googleBusinessProfileUrls.sarit
       : SITE.googleBusinessProfileUrls.yaya;
+  const geo =
+    "geo" in store && store.geo
+      ? {
+          "@type": "GeoCoordinates",
+          latitude: store.geo.latitude,
+          longitude: store.geo.longitude,
+        }
+      : undefined;
 
   return {
     "@context": "https://schema.org",
@@ -184,7 +201,8 @@ export function buildLocalBusinessSchema(location: keyof typeof STORE_LOCATIONS)
       opens: hours.opens,
       closes: hours.closes,
     })),
-    ...(gbpUrl ? { sameAs: [gbpUrl] } : {}),
+    ...(geo ? { geo } : {}),
+    ...(gbpUrl ? { sameAs: [gbpUrl], hasMap: gbpUrl } : {}),
   };
 }
 
