@@ -2,6 +2,8 @@ import Link from "next/link";
 import { InstagramIcon } from "@/components/icons";
 import {
   BIKOZULU_PULL_QUOTE,
+  INSTAGRAM_FOUNDER_STORY_URL,
+  INSTAGRAM_MORE_POSTS,
   INSTAGRAM_PROFILE_URL,
   PRESS_COVERAGE,
 } from "@/lib/press";
@@ -125,19 +127,55 @@ export function PressSection({ variant = "strip" }: PressSectionProps) {
             Wendy&apos;s story on Instagram
           </h3>
           <p className="text-gray-600 text-sm mb-6">
-            Follow @mycurveskenya for founder updates, fitting tips, and new arrivals
-            from our Sarit and Yaya boutiques.
+            In her July 2026 reflection, Wendy shares how the MyCurves dream began in
+            2017 — and links back to Bikozulu&apos;s &ldquo;Confidence In A Cup&rdquo;
+            feature.
           </p>
           <Link
-            href={INSTAGRAM_PROFILE_URL}
+            href={INSTAGRAM_FOUNDER_STORY_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="inline-flex items-center gap-2 px-6 py-3 bg-[#E6007E] text-white font-heading font-semibold rounded-lg hover:bg-[#c50069] transition-colors"
           >
             <InstagramIcon className="w-5 h-5" />
-            Watch Wendy&apos;s story on Instagram
+            Read Wendy&apos;s story on Instagram
           </Link>
+          <p className="text-gray-500 text-xs mt-4">
+            Follow{" "}
+            <a
+              href={INSTAGRAM_PROFILE_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#E6007E] hover:underline"
+            >
+              @mycurveskenya
+            </a>{" "}
+            for fitting tips and new arrivals.
+          </p>
         </div>
+
+        {INSTAGRAM_MORE_POSTS.length > 0 && (
+          <div className="mt-8 text-center max-w-2xl mx-auto">
+            <h4 className="text-sm font-heading font-semibold text-gray-700 uppercase tracking-wide mb-4">
+              More from Instagram
+            </h4>
+            <ul className="flex flex-col sm:flex-row flex-wrap justify-center gap-3">
+              {INSTAGRAM_MORE_POSTS.map((post) => (
+                <li key={post.url}>
+                  <a
+                    href={post.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2 text-sm text-[#E6007E] hover:underline"
+                  >
+                    <InstagramIcon className="w-4 h-4" />
+                    {post.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
       </div>
     </section>
   );
