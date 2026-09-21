@@ -7,7 +7,6 @@ import { useRouter } from 'next/navigation';
 import {
   FacebookIcon,
   InstagramIcon,
-  PinterestIcon,
   SearchIcon,
   ShoppingCartIcon,
   MenuIcon,
@@ -15,6 +14,7 @@ import {
   ChevronDownIcon,
 } from '@/components/icons';
 import { useCart } from '@/hooks/useCart';
+import { SOCIAL_LINKS } from '@/lib/social';
 
 export function Header() {
   const router = useRouter();
@@ -49,12 +49,6 @@ export function Header() {
     { name: 'ON SALE', href: '/on-sale' },
   ];
 
-  const socialLinks = {
-    facebook: 'https://www.facebook.com/lovingmycurves',
-    instagram: 'https://www.instagram.com/lovingmycurves',
-    pinterest: 'https://www.pinterest.com/lovingmycurves',
-  };
-
   const handleSearchSubmit = (event: FormEvent) => {
     event.preventDefault();
     const query = searchQuery.trim();
@@ -77,14 +71,11 @@ export function Header() {
 
         <div className="flex items-center gap-4 ml-auto">
           <div className="flex items-center gap-3">
-            <Link href={socialLinks.facebook} target="_blank" rel="noopener noreferrer" className="hover:text-[#E6007E] transition-colors">
+            <Link href={SOCIAL_LINKS.facebook} target="_blank" rel="noopener noreferrer" className="hover:text-[#E6007E] transition-colors" aria-label="Facebook">
               <FacebookIcon className="w-4 h-4" />
             </Link>
-            <Link href={socialLinks.instagram} target="_blank" rel="noopener noreferrer" className="hover:text-[#E6007E] transition-colors">
+            <Link href={SOCIAL_LINKS.instagram} target="_blank" rel="noopener noreferrer" className="hover:text-[#E6007E] transition-colors" aria-label="Instagram">
               <InstagramIcon className="w-4 h-4" />
-            </Link>
-            <Link href={socialLinks.pinterest} target="_blank" rel="noopener noreferrer" className="hover:text-[#E6007E] transition-colors">
-              <PinterestIcon className="w-4 h-4" />
             </Link>
           </div>
 

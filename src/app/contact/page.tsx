@@ -2,7 +2,8 @@
 
 import { Header } from '@/components/Header';
 import Footer from '@/components/Footer';
-import { FacebookIcon, InstagramIcon, PinterestIcon, WhatsAppIcon } from '@/components/icons';
+import { FacebookIcon, InstagramIcon, WhatsAppIcon } from '@/components/icons';
+import { SOCIAL_LINKS } from '@/lib/social';
 import { buildWhatsAppUrl } from '@/lib/whatsapp';
 
 const stores = [
@@ -117,19 +118,14 @@ export default function ContactPage() {
             </p>
 
             <div className="flex justify-center items-center gap-6">
-              <a href="https://facebook.com/lovingmycurves" target="_blank" rel="noopener noreferrer" className="group" aria-label="Follow us on Facebook">
+              <a href={SOCIAL_LINKS.facebook} target="_blank" rel="noopener noreferrer" className="group" aria-label="Follow us on Facebook">
                 <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-md hover:shadow-lg transition-all group-hover:scale-110">
                   <FacebookIcon className="w-8 h-8 text-gray-600 group-hover:text-[#E6007E] transition-colors" />
                 </div>
               </a>
-              <a href="https://instagram.com/lovingmycurves" target="_blank" rel="noopener noreferrer" className="group" aria-label="Follow us on Instagram">
+              <a href={SOCIAL_LINKS.instagram} target="_blank" rel="noopener noreferrer" className="group" aria-label="Follow us on Instagram">
                 <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-md hover:shadow-lg transition-all group-hover:scale-110">
                   <InstagramIcon className="w-8 h-8 text-gray-600 group-hover:text-[#E6007E] transition-colors" />
-                </div>
-              </a>
-              <a href="https://pinterest.com/lovingmycurves" target="_blank" rel="noopener noreferrer" className="group" aria-label="Follow us on Pinterest">
-                <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-md hover:shadow-lg transition-all group-hover:scale-110">
-                  <PinterestIcon className="w-8 h-8 text-gray-600 group-hover:text-[#E6007E] transition-colors" />
                 </div>
               </a>
             </div>
