@@ -3,6 +3,8 @@
 import { useCallback, useEffect, useState } from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
 import Image from 'next/image';
+import Link from 'next/link';
+import { BookFittingButton } from '@/components/BookFittingButton';
 
 const slides = [
   { src: '/images/hero/D0308445-1-1.jpg', alt: 'Hero Slide 1' },
@@ -90,13 +92,24 @@ export default function HeroSlider() {
                     EMBRACE YOUR CURVES
                   </h1>
                   <p
-                    className="text-xl md:text-2xl lg:text-3xl font-montserrat"
+                    className="text-xl md:text-2xl lg:text-3xl font-montserrat mb-8"
                     style={{
                       textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)',
                     }}
                   >
                     FALL IN LOVE WITH YOURSELF
                   </p>
+                  <div className="flex flex-col sm:flex-row gap-3">
+                    <Link
+                      href="/bras"
+                      className="inline-flex items-center justify-center rounded-lg bg-[#E6007E] px-6 py-3 font-montserrat font-semibold text-white shadow-md transition-colors hover:bg-[#c50069]"
+                    >
+                      Shop bras
+                    </Link>
+                    <BookFittingButton variant="secondary">
+                      Book a free fitting
+                    </BookFittingButton>
+                  </div>
                 </div>
               </div>
             </div>

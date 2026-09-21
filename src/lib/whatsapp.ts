@@ -11,6 +11,19 @@ export function buildGeneralWhatsAppMessage(): string {
   return "Hi MyCurves! I'd like help with finding the right fit and products.";
 }
 
+export function buildFittingBookingMessage(): string {
+  return [
+    "Hi MyCurves! I'd like to book a free bra fitting.",
+    "",
+    "Preferred store: Sarit / Yaya",
+    "Preferred day/time: ",
+  ].join("\n");
+}
+
+export function buildFittingBookingWhatsAppUrl(phone = WHATSAPP_SARIT): string {
+  return buildWhatsAppUrl(buildFittingBookingMessage(), phone);
+}
+
 interface ProductOrderParams {
   title: string;
   brand?: string;

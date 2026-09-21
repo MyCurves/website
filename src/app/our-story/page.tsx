@@ -3,7 +3,9 @@ import { Header } from "@/components/Header";
 import Footer from "@/components/Footer";
 import { JsonLd } from "@/components/JsonLd";
 import Link from "next/link";
+import { BookFittingButton } from "@/components/BookFittingButton";
 import { PressSection } from "@/components/PressSection";
+import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { buildPersonSchema, createPageMetadata } from "@/lib/seo";
 
 export const metadata = createPageMetadata({
@@ -88,6 +90,19 @@ export default function OurStory() {
         </section>
 
         <PressSection variant="full" />
+
+        <section className="py-12 px-6 bg-white text-center">
+          <h2 className="text-2xl md:text-3xl font-heading font-bold text-gray-900 mb-4">
+            Experience the MyCurves fitting
+          </h2>
+          <p className="text-gray-600 max-w-xl mx-auto mb-6">
+            Free professional bra fittings at Sarit Centre and Yaya Centre — message us on
+            WhatsApp to book your visit.
+          </p>
+          <BookFittingButton />
+        </section>
+
+        <TestimonialsSection variant="compact" limit={3} />
 
         {/* Mission Section */}
         <section className="py-16 px-6 bg-gradient-to-r from-pink-50 to-pink-100">

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import { BookFittingButton } from '@/components/BookFittingButton';
 import { Header } from '@/components/Header';
 import Footer from '@/components/Footer';
 import { JsonLd } from '@/components/JsonLd';
@@ -79,12 +80,9 @@ export default function MeasureBraSizeGuidePage() {
           </p>
 
           <div className="not-prose mt-12 flex flex-col sm:flex-row gap-4">
-            <Link
-              href="/find-your-size"
-              className="inline-block text-center px-6 py-3 bg-[#E6007E] text-white rounded-lg font-heading hover:bg-[#c50069] transition-colors"
-            >
+            <BookFittingButton className="text-center">
               Book a free fitting
-            </Link>
+            </BookFittingButton>
             <a
               href={buildWhatsAppUrl(
                 "Hi MyCurves! I measured at home and would like help confirming my bra size."

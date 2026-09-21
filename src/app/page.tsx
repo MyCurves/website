@@ -4,6 +4,7 @@ import MissionStatement from "@/components/MissionStatement";
 import CategoryCards from "@/components/CategoryCards";
 import FeaturedProducts from "@/components/FeaturedProducts";
 import { PressSection } from "@/components/PressSection";
+import { TestimonialsSection } from "@/components/TestimonialsSection";
 import Footer from "@/components/Footer";
 import { FaqSection } from "@/components/FaqSection";
 import { JsonLd } from "@/components/JsonLd";
@@ -32,6 +33,7 @@ export default function Home() {
         <PressSection variant="strip" />
         <CategoryCards />
         <FeaturedProducts products={featuredProducts} />
+        <TestimonialsSection />
         <FaqSection faqs={HOME_FAQS} className="bg-gray-50" />
       </main>
 

@@ -2,7 +2,7 @@
 
 import Link from 'next/link';
 import Image from 'next/image';
-import { useEffect, useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import { ChevronLeft, ChevronRight, Filter, Search, X } from 'lucide-react';
 import { PriceDisplay } from '@/components/PriceDisplay';
@@ -27,34 +27,33 @@ export default function ProductListing({
   defaultCategory,
 }: ProductListingProps) {
   const searchParams = useSearchParams();
-  const initialSearch = searchParams.get('search') ?? '';
-  const initialCategory =
-    (searchParams.get('category') as ProductCategory | null) ?? defaultCategory;
+  const urlSearch = searchParams.get('search') ?? '';
+  const urlCategory =
+    (searchParams.get('category') as ProductCategory | null) ??
+    defaultCategory ??
+    'all';
 
   const [isMobileFilterOpen, setIsMobileFilterOpen] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
-  const [searchQuery, setSearchQuery] = useState(initialSearch);
+  const [searchQuery, setSearchQuery] = useState(urlSearch);
   const [selectedBrands, setSelectedBrands] = useState<string[]>([]);
   const [selectedColors, setSelectedColors] = useState<string[]>([]);
-  const [selectedCategory, setSelectedCategory] = useState<string>(
-    initialCategory ?? 'all'
-  );
+  const [selectedCategory, setSelectedCategory] = useState<string>(urlCategory);
   const [minPrice, setMinPrice] = useState('');
   const [maxPrice, setMaxPrice] = useState('');
   const [sortBy, setSortBy] = useState<SortOption>('featured');
+  const [syncedUrl, setSyncedUrl] = useState({ search: urlSearch, category: urlCategory });
   const productsPerPage = 9;
 
-  useEffect(() => {
-    const search = searchParams.get('search') ?? '';
-    const category =
-      (searchParams.get('category') as ProductCategory | null) ??
-      defaultCategory ??
-      'all';
-
-    setSearchQuery(search);
-    setSelectedCategory(category);
+  if (
+    urlSearch !== syncedUrl.search ||
+    urlCategory !== syncedUrl.category
+  ) {
+    setSyncedUrl({ search: urlSearch, category: urlCategory });
+    setSearchQuery(urlSearch);
+    setSelectedCategory(urlCategory);
     setCurrentPage(1);
-  }, [searchParams, defaultCategory]);
+  }
 
   const brands = useMemo(
     () => [...new Set(products.map((product) => product.brand))].sort(),

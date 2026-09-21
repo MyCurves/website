@@ -12,6 +12,8 @@ import {
   buildFaqPageSchema,
   createPageMetadata,
 } from '@/lib/seo';
+import { BookFittingButton } from '@/components/BookFittingButton';
+import { TestimonialsSection } from '@/components/TestimonialsSection';
 import { buildWhatsAppUrl } from '@/lib/whatsapp';
 
 export const metadata = createPageMetadata({
@@ -54,9 +56,10 @@ export default function ContactPage() {
             <h1 className="text-4xl md:text-5xl font-heading font-bold text-gray-900 mb-4">
               Visit or Message Us
             </h1>
-            <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto">
+            <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-8">
               Two Nairobi boutiques, expert fittings, and WhatsApp support for sizes and orders.
             </p>
+            <BookFittingButton className="text-lg px-8 py-4" />
           </div>
         </section>
 
@@ -161,6 +164,7 @@ export default function ContactPage() {
           </div>
         </section>
 
+        <TestimonialsSection variant="compact" limit={3} className="bg-gray-50" />
         <FaqSection faqs={CONTACT_FAQS} />
       </main>
 

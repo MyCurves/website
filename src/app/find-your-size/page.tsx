@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { BookFittingButton } from "@/components/BookFittingButton";
 import { Header } from "@/components/Header";
 import Footer from "@/components/Footer";
 import { FaqSection } from "@/components/FaqSection";
@@ -173,15 +174,9 @@ export default function FindYourSize() {
               </div>
             </div>
 
-            {/* CTA Button */}
-            <a
-              href="https://wa.me/254746844227"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-block px-8 py-4 bg-[#E6007E] text-white text-lg font-heading font-bold rounded-lg hover:bg-[#c50069] transition-colors shadow-lg"
-            >
-              Book Your Fitting
-            </a>
+            <BookFittingButton className="text-lg px-8 py-4">
+              Book your fitting on WhatsApp
+            </BookFittingButton>
           </div>
         </section>
 
