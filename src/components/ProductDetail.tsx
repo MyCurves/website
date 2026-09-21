@@ -87,8 +87,8 @@ export default function ProductDetail({
     <div className="min-h-screen flex flex-col">
       <Header />
 
-      <main className="flex-1 pt-[129px]">
-        <div className="max-w-7xl mx-auto px-6 py-12">
+      <main className="flex-1 pt-[129px] pb-28 md:pb-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
             <div className="space-y-4">
               <div

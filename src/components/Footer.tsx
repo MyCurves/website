@@ -4,8 +4,8 @@ import { SOCIAL_LINKS } from '@/lib/social';
 
 export default function Footer() {
   return (
-    <footer className="bg-gray-800 text-gray-300">
-      <div className="max-w-7xl mx-auto py-12 px-6">
+    <footer className="bg-gray-800 text-gray-300 pb-24 md:pb-0">
+      <div className="max-w-7xl mx-auto py-12 px-4 sm:px-6">
         {/* Main Footer Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
           {/* Column 1 - Useful Links */}
@@ -186,7 +186,7 @@ export default function Footer() {
 
       {/* Bottom Copyright Bar */}
       <div className="border-t border-gray-700">
-        <div className="max-w-7xl mx-auto py-6 px-6">
+        <div className="max-w-7xl mx-auto py-6 px-4 sm:px-6">
           <p className="text-center text-sm">
             © 2026 Loving My Curves. All rights reserved.
           </p>

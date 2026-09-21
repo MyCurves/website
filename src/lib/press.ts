@@ -42,6 +42,10 @@ export const BIKOZULU_PULL_QUOTE =
 
 export const INSTAGRAM_PROFILE_URL = "https://www.instagram.com/mycurveskenya/";
 
+/** Founder video — playable via official Instagram embed on Our Story. */
+export const INSTAGRAM_FOUNDER_VIDEO_URL =
+  "https://www.instagram.com/p/CwW9E3etjuP/";
+
 /** Wendy’s July 2026 founder reflection — dream began 2017, links Bikozulu article. */
 export const INSTAGRAM_FOUNDER_STORY_URL =
   "https://www.instagram.com/p/DbY6Ov3OzA4/";

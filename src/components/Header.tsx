@@ -157,7 +157,7 @@ export function Header() {
             <button
               type="button"
               onClick={() => setIsSearchOpen((open) => !open)}
-              className="hover:text-[#E6007E] transition-colors"
+              className="flex min-h-11 min-w-11 items-center justify-center hover:text-[#E6007E] transition-colors"
               aria-label="Search products"
             >
               <SearchIcon className="w-5 h-5" />
@@ -172,7 +172,7 @@ export function Header() {
 
             <Link
               href="/cart"
-              className="relative hover:text-[#E6007E] transition-colors"
+              className="relative flex min-h-11 min-w-11 items-center justify-center hover:text-[#E6007E] transition-colors"
               aria-label="Inquiry list"
             >
               <ShoppingCartIcon className="w-5 h-5" />
@@ -185,7 +185,7 @@ export function Header() {
 
             <button
               type="button"
-              className="md:hidden hover:text-[#E6007E] transition-colors"
+              className="md:hidden flex min-h-11 min-w-11 items-center justify-center hover:text-[#E6007E] transition-colors"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-label="Toggle menu"
             >

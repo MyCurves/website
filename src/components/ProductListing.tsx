@@ -200,7 +200,7 @@ export default function ProductListing({
   return (
     <div className="min-h-screen bg-gray-50">
       <div className="bg-white border-b">
-        <div className="max-w-7xl mx-auto px-6 py-4">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-4">
           <nav className="flex items-center text-sm text-gray-600">
             <Link href="/" className="hover:text-primary transition-colors">
               Home
@@ -212,8 +212,8 @@ export default function ProductListing({
       </div>
 
       <div className="bg-white border-b">
-        <div className="max-w-7xl mx-auto px-6 py-8">
-          <h1 className="text-4xl font-heading uppercase text-gray-900 mb-3">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-8">
+          <h1 className="text-2xl sm:text-4xl font-heading uppercase text-gray-900 mb-3">
             {title}
           </h1>
           {description && (
@@ -225,13 +225,13 @@ export default function ProductListing({
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 py-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 py-6 sm:py-8 pb-28 md:pb-8">
         <div className="flex flex-col lg:flex-row gap-8">
           <aside className="lg:w-1/4">
             <button
               type="button"
               onClick={() => setIsMobileFilterOpen(!isMobileFilterOpen)}
-              className="lg:hidden w-full bg-white border rounded-lg px-4 py-3 flex items-center justify-between mb-4 hover:bg-gray-50 transition-colors"
+              className="lg:hidden w-full min-h-11 bg-white border rounded-lg px-4 py-3 flex items-center justify-between mb-4 hover:bg-gray-50 transition-colors"
             >
               <span className="flex items-center gap-2 font-heading">
                 <Filter className="w-5 h-5" />

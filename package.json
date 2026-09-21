@@ -32,7 +32,10 @@
     "start": "next start",
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
-    "check": "npm run lint && npm run typecheck && npm run build",
+    "validate:products": "node scripts/validate-product-slugs.mjs",
+    "validate:pages": "node scripts/validate-site-pages.mjs",
+    "validate:founder-video": "node scripts/validate-founder-video.mjs",
+    "check": "npm run lint && npm run typecheck && npm run validate:products && npm run validate:pages && npm run validate:founder-video && node scripts/check-links.mjs && npm run build",
     "seed:products": "node scripts/seed-products.mjs",
     "check:links": "node scripts/check-links.mjs"
   },

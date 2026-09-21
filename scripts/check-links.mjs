@@ -18,6 +18,8 @@ const STATIC_ROUTES = new Set([
   "/our-story",
   "/contact",
   "/find-your-size",
+  "/guides",
+  "/guides/how-to-measure-bra-size-at-home",
   "/bras",
   "/panties",
   "/shapewear",

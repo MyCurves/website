@@ -85,19 +85,18 @@ export default function HeroSlider() {
               <div className="absolute inset-0 bg-black/30 z-[1]" />
 
               {/* Text Overlay */}
-              <div className="absolute inset-0 z-10 flex items-center pl-[10%]">
-                <div className="text-white">
+              <div className="absolute inset-0 z-10 flex items-center px-4 sm:px-8 md:pl-[10%]">
+                <div className="max-w-xl text-white">
                   <h1
-                    className="text-3xl md:text-5xl lg:text-6xl font-montserrat font-bold uppercase mb-4"
+                    className="text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-montserrat font-bold uppercase mb-3 sm:mb-4 tracking-wide sm:tracking-widest md:tracking-[0.2em] break-words"
                     style={{
-                      letterSpacing: '0.2em',
                       textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)',
                     }}
                   >
                     EMBRACE YOUR CURVES
                   </h1>
                   <p
-                    className="text-xl md:text-2xl lg:text-3xl font-montserrat mb-8"
+                    className="text-base sm:text-xl md:text-2xl lg:text-3xl font-montserrat mb-6 sm:mb-8 leading-snug"
                     style={{
                       textShadow: '2px 2px 4px rgba(0, 0, 0, 0.8)',
                     }}
@@ -107,11 +106,14 @@ export default function HeroSlider() {
                   <div className="flex flex-col sm:flex-row gap-3">
                     <Link
                       href="/bras"
-                      className="inline-flex items-center justify-center rounded-lg bg-[#E6007E] px-6 py-3 font-montserrat font-semibold text-white shadow-md transition-colors hover:bg-[#c50069]"
+                      className="inline-flex min-h-11 items-center justify-center rounded-lg bg-[#E6007E] px-6 py-3 font-montserrat font-semibold text-white shadow-md transition-colors hover:bg-[#c50069]"
                     >
                       Shop bras
                     </Link>
-                    <BookFittingButton variant="secondary">
+                    <BookFittingButton
+                      variant="secondary"
+                      className="min-h-11 w-full sm:w-auto"
+                    >
                       Book a free fitting
                     </BookFittingButton>
                   </div>
