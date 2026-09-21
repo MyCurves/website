@@ -3,6 +3,8 @@ title: "Panache Sophia Plunge Bra Sienna Rose"
 slug: "panache-sophia-plunge"
 brand: "Panache"
 category: "bras"
+price: 8700
+priceNote: "Matching brief: KSh 4,300"
 featured: true
 description: "Easy to wear, impossible to forget — the Sophia plunge bra blends effortless style with all-day comfort. In this season’s Sienna Rose, its plunging silhouette complements low necklines, while the delicate floral lace adds a subtle touch of sophistication. Behind its elegant appearance, Sophia is thoughtfully engineered with our expertise and technical know-how to give fuller-busted women a fit that supports, shapes, and moves with them. Designed to help you feel confident and beautiful, every moment of the day."
 images:

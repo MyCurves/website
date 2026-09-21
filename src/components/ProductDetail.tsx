@@ -55,6 +55,9 @@ export default function ProductDetail({
     const message = buildProductOrderMessage({
       title: product.title,
       brand: product.brand,
+      price: product.price,
+      salePrice: product.salePrice,
+      priceNote: product.priceNote,
       quantity,
       size: selectedSize,
       color: selectedColorName,
@@ -68,6 +71,9 @@ export default function ProductDetail({
       slug: product.slug,
       title: product.title,
       brand: product.brand,
+      price: product.price,
+      salePrice: product.salePrice,
+      priceNote: product.priceNote,
       quantity,
       size: selectedSize,
       color: selectedColorName,
@@ -138,9 +144,20 @@ export default function ProductDetail({
                 salePrice={product.salePrice}
                 size="lg"
               />
-              <p className="text-sm text-gray-500">
-                Ask on WhatsApp for current pricing and size availability.
-              </p>
+              {product.priceNote ? (
+                <p className="text-sm font-medium text-amber-800 bg-amber-50 border border-amber-200 rounded-lg p-3">
+                  {product.priceNote}
+                </p>
+              ) : product.price ? (
+                <p className="text-sm text-gray-500">
+                  Message us on WhatsApp to confirm your size.
+                </p>
+              ) : (
+                <p className="text-sm text-gray-500">
+                  Price on request — ask on WhatsApp for current pricing and size
+                  availability.
+                </p>
+              )}
 
               <p className="text-gray-600 leading-relaxed">{product.description}</p>
 

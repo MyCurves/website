@@ -1,3 +1,5 @@
+import { formatProductPrice, hasProductPrice } from "@/lib/format-price";
+
 export const WHATSAPP_SARIT = "254746844227";
 export const WHATSAPP_YAYA = "254703844227";
 
@@ -12,6 +14,9 @@ export function buildGeneralWhatsAppMessage(): string {
 interface ProductOrderParams {
   title: string;
   brand?: string;
+  price?: number | null;
+  salePrice?: number | null;
+  priceNote?: string;
   quantity?: number;
   size?: string;
   color?: string;
@@ -21,6 +26,9 @@ interface ProductOrderParams {
 export function buildProductOrderMessage({
   title,
   brand,
+  price,
+  salePrice,
+  priceNote,
   quantity = 1,
   size,
   color,
@@ -36,15 +44,32 @@ export function buildProductOrderMessage({
   if (color) lines.push(`Colour: ${color}`);
   if (size) lines.push(`Size: ${size}`);
   lines.push(`Quantity: ${quantity}`);
+
+  if (hasProductPrice(price, salePrice)) {
+    lines.push(`Price: ${formatProductPrice(price, salePrice)}`);
+  }
+
+  if (priceNote) {
+    lines.push(`Note: ${priceNote}`);
+  }
+
   if (pageUrl) lines.push(`Link: ${pageUrl}`);
 
-  lines.push("", "Please let me know availability, price, and sizes. Thank you!");
+  if (hasProductPrice(price, salePrice)) {
+    lines.push("", "Please let me know availability and sizes. Thank you!");
+  } else {
+    lines.push("", "Please let me know availability, price, and sizes. Thank you!");
+  }
+
   return lines.join("\n");
 }
 
 interface CartItem {
   title: string;
   brand?: string;
+  price?: number | null;
+  salePrice?: number | null;
+  priceNote?: string;
   quantity: number;
   size?: string;
   color?: string;
@@ -60,10 +85,26 @@ export function buildCartOrderMessage(items: CartItem[], pageUrl?: string): stri
     if (item.color) lines.push(`   Colour: ${item.color}`);
     if (item.size) lines.push(`   Size: ${item.size}`);
     lines.push(`   Qty: ${item.quantity}`);
-    lines.push(`   Link: ${pageUrl ? `${pageUrl.replace(/\/cart$/, "")}/products/${item.slug}` : item.slug}`);
+    if (hasProductPrice(item.price, item.salePrice)) {
+      lines.push(`   Price: ${formatProductPrice(item.price, item.salePrice)}`);
+    }
+    if (item.priceNote) {
+      lines.push(`   Note: ${item.priceNote}`);
+    }
+    lines.push(
+      `   Link: ${pageUrl ? `${pageUrl.replace(/\/cart$/, "")}/products/${item.slug}` : item.slug}`
+    );
     lines.push("");
   });
 
-  lines.push("Please confirm availability, prices, and sizes. Thank you!");
+  const allHavePrices = items.every((item) =>
+    hasProductPrice(item.price, item.salePrice)
+  );
+
+  lines.push(
+    allHavePrices
+      ? "Please confirm availability and sizes. Thank you!"
+      : "Please confirm availability, prices, and sizes. Thank you!"
+  );
   return lines.join("\n");
 }

@@ -3,6 +3,7 @@ title: "Panache Nina Balcony Bra Black Leopard"
 slug: "panache-nina"
 brand: "Panache"
 category: "bras"
+price: 6900
 featured: false
 description: "The Nina balcony launches in a classic yet subtle black leopard print. Featuring a sophisticated and feminine lace made using recycled yarn, Nina flatters every curve. What are you waiting for? It's time to meet you new favourite bra!"
 images:

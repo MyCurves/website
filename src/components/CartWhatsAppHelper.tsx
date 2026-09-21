@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { WhatsAppIcon } from '@/components/icons';
 import { useCart } from '@/hooks/useCart';
+import { formatProductPrice, hasProductPrice } from '@/lib/format-price';
 import { buildCartOrderMessage, buildWhatsAppUrl } from '@/lib/whatsapp';
 
 export function CartWhatsAppHelper() {
@@ -61,6 +62,14 @@ export function CartWhatsAppHelper() {
               </h3>
               {item.brand && (
                 <p className="text-sm text-gray-500">{item.brand}</p>
+              )}
+              {hasProductPrice(item.price, item.salePrice) && (
+                <p className="text-sm font-medium text-[#E6007E]">
+                  {formatProductPrice(item.price, item.salePrice)}
+                </p>
+              )}
+              {item.priceNote && (
+                <p className="text-sm text-amber-800">{item.priceNote}</p>
               )}
               {item.color && (
                 <p className="text-sm text-gray-600">Colour: {item.color}</p>

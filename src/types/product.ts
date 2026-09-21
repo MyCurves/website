@@ -12,6 +12,7 @@ export interface Product {
   category: ProductCategory;
   price?: number | null;
   salePrice?: number | null;
+  priceNote?: string;
   featured: boolean;
   description: string;
   body: string;

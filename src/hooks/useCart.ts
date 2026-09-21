@@ -6,6 +6,9 @@ export interface CartItem {
   slug: string;
   title: string;
   brand?: string;
+  price?: number | null;
+  salePrice?: number | null;
+  priceNote?: string;
   quantity: number;
   size?: string;
   color?: string;

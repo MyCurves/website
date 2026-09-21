@@ -83,6 +83,10 @@ function parseProduct(slug: string, raw: string): Product {
     price: price !== undefined && !Number.isNaN(price) ? price : undefined,
     salePrice:
       salePrice !== undefined && !Number.isNaN(salePrice) ? salePrice : undefined,
+    priceNote:
+      data.priceNote !== undefined && data.priceNote !== null
+        ? String(data.priceNote)
+        : undefined,
     featured: Boolean(data.featured),
     description: String(data.description ?? ""),
     body: content.trim(),

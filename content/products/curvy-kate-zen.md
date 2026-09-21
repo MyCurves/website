@@ -3,6 +3,7 @@ title: "Curvy Kate Zen Non-Wired Bralette Black"
 slug: "curvy-kate-zen"
 brand: "Curvy Kate"
 category: "bras"
+price: 4900
 featured: false
 description: "Meet the buttery soft bralette every woman needs in her drawer: Zen, now available in everyday Black. With a soft and breathable fabric, our cosy and comfy Zen bralette features double-layered cups for gentle shaping, and a ribbed deep underband in soft fabric that delivers extra support without sacrificing comfort. Perfect for lounging, layering, or living your best life, this bralette is your new go-to for effortless comfort."
 images:

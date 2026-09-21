@@ -3,6 +3,8 @@ title: "Curvy Kate Boost Me Up Sleeved Padded Balcony Body Black"
 slug: "curvy-kate-boost-me-up"
 brand: "Curvy Kate"
 category: "bras"
+price: 5900
+priceNote: "Limited sizes available — please contact the branches."
 featured: true
 description: "Stand out in style with our classic underwear as outerwear solution, Boost Me Up padded balcony body. With beautiful mesh sleeves and padded cups that boost and lift for a rounded shape, it's the perfect lingerie secret weapon. Style from day to night, the stretch fabric offers 24-hour comfort."
 images:

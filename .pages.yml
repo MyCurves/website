@@ -40,6 +40,10 @@ content:
       - name: salePrice
         label: Sale Price (KSh)
         type: number
+      - name: priceNote
+        label: Price Note
+        type: text
+        description: Optional note shown with price (e.g. limited sizes, matching brief pricing).
       - name: featured
         label: Featured on Homepage
         type: boolean
