@@ -3,6 +3,7 @@ import HeroSlider from "@/components/HeroSlider";
 import MissionStatement from "@/components/MissionStatement";
 import CategoryCards from "@/components/CategoryCards";
 import FeaturedProducts from "@/components/FeaturedProducts";
+import { FounderVideo } from "@/components/FounderVideo";
 import { PressSection } from "@/components/PressSection";
 import { TestimonialsSection } from "@/components/TestimonialsSection";
 import Footer from "@/components/Footer";
@@ -31,6 +32,7 @@ export default function Home() {
         <HeroSlider />
         <MissionStatement />
         <PressSection variant="strip" />
+        <FounderVideo variant="teaser" />
         <CategoryCards />
         <FeaturedProducts products={featuredProducts} />
         <TestimonialsSection />

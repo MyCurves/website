@@ -4,6 +4,7 @@ import Footer from "@/components/Footer";
 import { JsonLd } from "@/components/JsonLd";
 import Link from "next/link";
 import { BookFittingButton } from "@/components/BookFittingButton";
+import { FounderVideo } from "@/components/FounderVideo";
 import { PressSection } from "@/components/PressSection";
 import { TestimonialsSection } from "@/components/TestimonialsSection";
 import { buildPersonSchema, createPageMetadata } from "@/lib/seo";
@@ -22,11 +23,11 @@ export default function OurStory() {
       <JsonLd data={buildPersonSchema()} />
       <Header />
       
-      <main className="flex-1 mt-[129px]">
+      <main className="flex-1 mt-[129px] pb-28 md:pb-0">
         {/* Hero Section */}
-        <section className="relative bg-gradient-to-r from-pink-50 via-pink-100 to-pink-50 py-20 px-6">
+        <section className="relative bg-gradient-to-r from-pink-50 via-pink-100 to-pink-50 py-12 sm:py-20 px-4 sm:px-6">
           <div className="max-w-4xl mx-auto text-center">
-            <h1 className="text-4xl md:text-6xl font-heading font-bold text-gray-900 mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-6xl font-heading font-bold text-gray-900 mb-6">
               Our Story
             </h1>
             <p className="text-xl md:text-2xl text-gray-700 leading-relaxed">
@@ -88,6 +89,8 @@ export default function OurStory() {
             </div>
           </div>
         </section>
+
+        <FounderVideo />
 
         <PressSection variant="full" />
 

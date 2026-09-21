@@ -50,10 +50,10 @@ export default function ContactPage() {
       <JsonLd data={buildFaqPageSchema(CONTACT_FAQS)} />
       <Header />
 
-      <main className="flex-1 pt-[129px]">
-        <section className="bg-gradient-to-br from-pink-50 to-white py-16 px-4">
+      <main className="flex-1 pt-[129px] pb-28 md:pb-0">
+        <section className="bg-gradient-to-br from-pink-50 to-white py-12 sm:py-16 px-4">
           <div className="max-w-7xl mx-auto text-center">
-            <h1 className="text-4xl md:text-5xl font-heading font-bold text-gray-900 mb-4">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-heading font-bold text-gray-900 mb-4">
               Visit or Message Us
             </h1>
             <p className="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-8">
