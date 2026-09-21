@@ -9,6 +9,8 @@ interface ContentPageProps {
 }
 
 export default function ContentPage({ page, children }: ContentPageProps) {
+  const hasBody = page.body.trim().length > 0;
+
   return (
     <>
       <Header />
@@ -28,11 +30,13 @@ export default function ContentPage({ page, children }: ContentPageProps) {
             <p className="text-lg text-gray-600 mb-8">{page.description}</p>
           )}
 
-          {children ?? (
-            <div className="prose prose-gray max-w-none whitespace-pre-line text-gray-700 leading-relaxed">
+          {hasBody && (
+            <div className="prose prose-gray max-w-none whitespace-pre-line text-gray-700 leading-relaxed mb-8">
               {page.body}
             </div>
           )}
+
+          {children}
         </div>
       </main>
       <Footer />
