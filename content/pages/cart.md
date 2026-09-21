@@ -1,9 +1,7 @@
 ---
-title: Shopping Cart
+title: Order via WhatsApp
 slug: cart
-description: Order in-store or via WhatsApp while our online checkout is being set up.
+description: Build your inquiry list and send it to our team on WhatsApp for size and price confirmation.
 ---
 
-Online checkout is coming soon. In the meantime, you can shop with us in person or place orders through WhatsApp.
-
-Our team will help you confirm sizes, check stock, and arrange delivery or collection from Sarit Centre or Yaya Centre.
+Add products from the catalog, then send your list to us on WhatsApp. We will confirm sizes, availability, and pricing before you visit Sarit Centre or Yaya Centre.

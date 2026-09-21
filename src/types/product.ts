@@ -8,9 +8,10 @@ export interface ProductColor {
 export interface Product {
   slug: string;
   title: string;
+  brand: string;
   category: ProductCategory;
-  price: number;
-  salePrice?: number;
+  price?: number | null;
+  salePrice?: number | null;
   featured: boolean;
   description: string;
   body: string;
@@ -24,9 +25,13 @@ export interface Product {
 export interface ProductListingItem {
   id: string;
   title: string;
-  price: number;
-  salePrice?: number;
+  brand: string;
+  price?: number | null;
+  salePrice?: number | null;
   image: string;
   slug: string;
-  category?: string;
+  category: ProductCategory;
+  colors: string[];
+  description: string;
+  features: string[];
 }

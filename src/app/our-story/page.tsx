@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { Header } from "@/components/Header";
 import Footer from "@/components/Footer";
 import Link from "next/link";
@@ -24,17 +25,20 @@ export default function OurStory() {
         <section className="py-16 px-6 bg-white">
           <div className="max-w-6xl mx-auto">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-              {/* Image Placeholder */}
               <div className="order-2 lg:order-1">
-                <div className="bg-gradient-to-br from-pink-100 to-pink-200 rounded-lg aspect-square flex items-center justify-center">
-                  <div className="text-center p-8">
-                    <div className="w-32 h-32 bg-white rounded-full mx-auto mb-4 flex items-center justify-center">
-                      <span className="text-4xl">👤</span>
-                    </div>
-                    <p className="text-gray-600 text-sm">Founder Photo</p>
-                    <p className="text-gray-500 text-xs mt-1">Wendy Karira</p>
-                  </div>
+                <div className="relative aspect-[4/5] rounded-lg overflow-hidden shadow-lg">
+                  <Image
+                    src="/images/about/wendy-karira.jpg"
+                    alt="Wendy Karira, Founder of MyCurves"
+                    fill
+                    className="object-cover"
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    priority
+                  />
                 </div>
+                <p className="text-sm text-gray-500 mt-3 text-center">
+                  Wendy Karira, Founder of MyCurves
+                </p>
               </div>
 
               {/* Story Content */}
