@@ -12,6 +12,7 @@ import type { ProductCategory, ProductListingItem } from '@/types/product';
 interface ProductListingProps {
   title: string;
   description?: string;
+  seoIntro?: string;
   products: ProductListingItem[];
   defaultCategory?: ProductCategory;
 }
@@ -21,6 +22,7 @@ type SortOption = 'featured' | 'price-asc' | 'price-desc' | 'name';
 export default function ProductListing({
   title,
   description,
+  seoIntro,
   products,
   defaultCategory,
 }: ProductListingProps) {
@@ -200,6 +202,9 @@ export default function ProductListing({
           </h1>
           {description && (
             <p className="text-gray-600 max-w-3xl">{description}</p>
+          )}
+          {seoIntro && (
+            <p className="text-gray-600 max-w-3xl mt-4 leading-relaxed">{seoIntro}</p>
           )}
         </div>
       </div>
@@ -421,7 +426,7 @@ export default function ProductListing({
                       <div className="aspect-square overflow-hidden rounded-t-lg relative">
                         <Image
                           src={product.image}
-                          alt={product.title}
+                          alt={`${product.brand} ${product.title}`}
                           width={400}
                           height={400}
                           className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"

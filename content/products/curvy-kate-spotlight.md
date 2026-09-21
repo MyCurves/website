@@ -3,6 +3,7 @@ title: "Curvy Kate Spotlight Full Cup Side Support Bra Black"
 slug: "curvy-kate-spotlight"
 brand: "Curvy Kate"
 category: "bras"
+price: 6500
 featured: true
 description: "Your new favourite everyday bra, Curvy Kate Spotlight, lifts and shapes effortlessly with non-slip straps and gorgeous design in timeless black. With a four-part cup which uses side panels to give forward projection, and laminated cups for lift and support, it's a wardrobe must have."
 images:

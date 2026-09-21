@@ -3,6 +3,7 @@ title: "Curvy Kate Everymove Wired Multiway Sports Bra Black"
 slug: "curvy-kate-everymove-sports-bra"
 brand: "Curvy Kate"
 category: "sports-bras"
+price: 8500
 featured: true
 description: "Awarded Best in Test by Women's Running magazine."
 images:

@@ -1,11 +1,22 @@
 import Image from "next/image";
 import { Header } from "@/components/Header";
 import Footer from "@/components/Footer";
+import { JsonLd } from "@/components/JsonLd";
 import Link from "next/link";
+import { buildPersonSchema, createPageMetadata } from "@/lib/seo";
+
+export const metadata = createPageMetadata({
+  title: "Our Story — Wendy Karira & MyCurves",
+  description:
+    "How Wendy Karira founded MyCurves (Loving My Curves) to bring expert plus-size bra fitting and premium lingerie to Nairobi.",
+  path: "/our-story",
+  image: "/images/about/wendy-karira.jpg",
+});
 
 export default function OurStory() {
   return (
     <div className="min-h-screen flex flex-col">
+      <JsonLd data={buildPersonSchema()} />
       <Header />
       
       <main className="flex-1 mt-[129px]">

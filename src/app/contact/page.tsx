@@ -1,10 +1,20 @@
-'use client';
-
+import Link from 'next/link';
 import { Header } from '@/components/Header';
 import Footer from '@/components/Footer';
+import { FaqSection } from '@/components/FaqSection';
+import { JsonLd } from '@/components/JsonLd';
 import { FacebookIcon, InstagramIcon, WhatsAppIcon } from '@/components/icons';
+import { CONTACT_FAQS } from '@/lib/faqs';
 import { SOCIAL_LINKS } from '@/lib/social';
+import { buildFaqPageSchema, createPageMetadata } from '@/lib/seo';
 import { buildWhatsAppUrl } from '@/lib/whatsapp';
+
+export const metadata = createPageMetadata({
+  title: 'Contact MyCurves Nairobi',
+  description:
+    'Contact MyCurves at Sarit Centre (Westlands) or Yaya Centre (Kilimani). Phone, WhatsApp, email hello@lovingmycurves.com. Mon–Sat 10–7, Sun 10–6.',
+  path: '/contact',
+});
 
 const stores = [
   {
@@ -26,6 +36,7 @@ const stores = [
 export default function ContactPage() {
   return (
     <div className="min-h-screen flex flex-col">
+      <JsonLd data={buildFaqPageSchema(CONTACT_FAQS)} />
       <Header />
 
       <main className="flex-1 pt-[129px]">
@@ -48,39 +59,28 @@ export default function ContactPage() {
                   key={store.name}
                   className="bg-white rounded-lg shadow-lg p-8 border border-gray-100 hover:shadow-xl transition-shadow"
                 >
-                  <div className="flex items-center gap-3 mb-6">
-                    <div className="w-12 h-12 bg-[#E6007E] rounded-full flex items-center justify-center">
-                      <svg className="w-6 h-6 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                      </svg>
-                    </div>
-                    <h2 className="text-2xl font-heading font-bold text-gray-900">{store.name}</h2>
-                  </div>
-
+                  <h2 className="text-2xl font-heading font-bold text-gray-900 mb-6">
+                    {store.name}
+                  </h2>
                   <div className="space-y-4">
                     <p className="text-gray-700">{store.address}</p>
-
                     <a
                       href={store.phoneHref}
                       className="block text-gray-700 hover:text-[#E6007E] transition-colors font-medium"
                     >
                       {store.phone}
                     </a>
-
                     <a
                       href="mailto:hello@lovingmycurves.com"
                       className="block text-gray-700 hover:text-[#E6007E] transition-colors"
                     >
                       hello@lovingmycurves.com
                     </a>
-
                     <div className="pt-4 border-t">
                       <p className="text-gray-700 font-semibold mb-1">Opening Hours</p>
                       <p className="text-gray-600 text-sm">Mon–Sat: 10am – 7pm</p>
                       <p className="text-gray-600 text-sm">Sun: 10am – 6pm</p>
                     </div>
-
                     <div className="flex flex-wrap gap-3 pt-4">
                       <a
                         href={buildWhatsAppUrl(
@@ -114,9 +114,16 @@ export default function ContactPage() {
               Follow Us
             </h2>
             <p className="text-gray-600 mb-8 max-w-2xl mx-auto">
-              Stay connected for fitting tips, new arrivals, and store updates.
+              Stay connected for fitting tips, new arrivals, and store updates on{' '}
+              <Link href={SOCIAL_LINKS.instagram} className="text-[#E6007E] hover:underline">
+                Instagram
+              </Link>{' '}
+              and{' '}
+              <Link href={SOCIAL_LINKS.facebook} className="text-[#E6007E] hover:underline">
+                Facebook
+              </Link>
+              .
             </p>
-
             <div className="flex justify-center items-center gap-6">
               <a href={SOCIAL_LINKS.facebook} target="_blank" rel="noopener noreferrer" className="group" aria-label="Follow us on Facebook">
                 <div className="w-16 h-16 bg-white rounded-full flex items-center justify-center shadow-md hover:shadow-lg transition-all group-hover:scale-110">
@@ -131,6 +138,8 @@ export default function ContactPage() {
             </div>
           </div>
         </section>
+
+        <FaqSection faqs={CONTACT_FAQS} />
       </main>
 
       <Footer />

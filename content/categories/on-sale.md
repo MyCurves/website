@@ -1,7 +1,7 @@
 ---
 title: On Sale
 slug: on-sale
-description: Don't miss out on these amazing deals
+description: Special offers on bras and lingerie at MyCurves Nairobi.
 ---
 
-Limited-time offers on bras, panties, shapewear, and sportswear. Visit our Sarit Centre or Yaya Centre stores while stocks last.
+Sale items at MyCurves change with stock at our Sarit and Yaya boutiques. WhatsApp us for current offers or visit in store during opening hours — Mon–Sat 10am–7pm, Sun 10am–6pm.

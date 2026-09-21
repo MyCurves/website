@@ -3,6 +3,7 @@ title: "Panache Activate Wired Sports Bra Black"
 slug: "panache-activate-sports-bra"
 brand: "Panache"
 category: "sports-bras"
+price: 7900
 featured: false
 description: "The Sculptresse Activate Sports Bra in black is a workout essential. With non padded cups for a lightweight and breathable feel, you'll feel comfortable and supported in this bounce-reducing style. This sports bra is designed to withstand high impact, whilst remaining comfortable enough for everyday wear. Featuring wires that are encased to offer shape and lift without compromising on comfort, its time to welcome your new fitness support system."
 images:

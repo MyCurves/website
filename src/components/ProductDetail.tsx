@@ -8,6 +8,7 @@ import Footer from '@/components/Footer';
 import { PriceDisplay } from '@/components/PriceDisplay';
 import { WhatsAppIcon } from '@/components/icons';
 import { useCart } from '@/hooks/useCart';
+import { getProductImageAlt } from '@/lib/seo';
 import {
   buildProductOrderMessage,
   buildWhatsAppUrl,
@@ -96,7 +97,7 @@ export default function ProductDetail({
               >
                 <Image
                   src={displayImages[selectedImage]}
-                  alt={product.title}
+                  alt={getProductImageAlt(product, selectedImage)}
                   fill
                   className="object-cover transition-transform duration-300 group-hover:scale-110"
                   sizes="(max-width: 768px) 100vw, 50vw"
@@ -118,7 +119,7 @@ export default function ProductDetail({
                     >
                       <Image
                         src={image}
-                        alt={`${product.title} - View ${index + 1}`}
+                        alt={`${getProductImageAlt(product, index)} — view ${index + 1}`}
                         fill
                         className="object-cover"
                         sizes="(max-width: 768px) 25vw, 12vw"
@@ -372,7 +373,7 @@ export default function ProductDetail({
                     <div className="aspect-square relative bg-gray-100 rounded-lg overflow-hidden mb-3">
                       <Image
                         src={relatedProduct.images[0] ?? '/images/categories/Bras-1.jpg'}
-                        alt={relatedProduct.title}
+                        alt={getProductImageAlt(relatedProduct)}
                         fill
                         className="object-cover transition-transform duration-300 group-hover:scale-105"
                         sizes="(max-width: 768px) 50vw, 25vw"

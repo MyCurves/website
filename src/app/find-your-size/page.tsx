@@ -1,9 +1,28 @@
+import Link from "next/link";
 import { Header } from "@/components/Header";
 import Footer from "@/components/Footer";
+import { FaqSection } from "@/components/FaqSection";
+import { JsonLd } from "@/components/JsonLd";
+import { FIND_YOUR_SIZE_FAQS } from "@/lib/faqs";
+import {
+  buildFaqPageSchema,
+  buildHowToSchema,
+  createPageMetadata,
+} from "@/lib/seo";
+
+export const metadata = createPageMetadata({
+  title: "Find Your Bra Size",
+  description:
+    "Free professional bra fittings at MyCurves Nairobi plus a step-by-step home measuring guide. Visit Sarit Centre or Yaya Centre, or read our fitting guide.",
+  path: "/find-your-size",
+});
 
 export default function FindYourSize() {
   return (
     <div className="min-h-screen flex flex-col">
+      <JsonLd
+        data={[buildHowToSchema(), buildFaqPageSchema(FIND_YOUR_SIZE_FAQS)]}
+      />
       <Header />
       
       <main className="flex-1 mt-[129px]">
@@ -14,7 +33,13 @@ export default function FindYourSize() {
               Find Your Perfect Fit
             </h1>
             <p className="text-xl md:text-2xl text-gray-700">
-              Get a FREE bra fitting at our stores
+              Get a FREE bra fitting at our stores — or start with our{' '}
+              <Link
+                href="/guides/how-to-measure-bra-size-at-home"
+                className="text-[#E6007E] hover:underline font-semibold"
+              >
+                home measuring guide
+              </Link>
             </p>
           </div>
         </section>
@@ -269,8 +294,10 @@ export default function FindYourSize() {
             </div>
           </div>
         </section>
+
+        <FaqSection faqs={FIND_YOUR_SIZE_FAQS} className="bg-gray-50" />
       </main>
-      
+
       <Footer />
     </div>
   );

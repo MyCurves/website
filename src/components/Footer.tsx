@@ -46,6 +46,14 @@ export default function Footer() {
                   Testimonials
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/guides"
+                  className="text-sm hover:text-primary transition"
+                >
+                  Fitting Guides
+                </Link>
+              </li>
             </ul>
           </div>
 

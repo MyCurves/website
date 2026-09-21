@@ -25,7 +25,7 @@ export default function FeaturedProducts({ products }: FeaturedProductsProps) {
               <div className="aspect-square overflow-hidden rounded-t-lg">
                 <Image
                   src={product.image}
-                  alt={product.title}
+                  alt={`${product.brand} ${product.title}`}
                   width={400}
                   height={400}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-300"

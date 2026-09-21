@@ -3,13 +3,14 @@ import { Header } from '@/components/Header';
 import Footer from '@/components/Footer';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
-import type { Metadata } from 'next';
+import { createPageMetadata } from '@/lib/seo';
 
-export const metadata: Metadata = {
-  title: 'About Us - Loving My Curves',
+export const metadata = createPageMetadata({
+  title: 'About MyCurves',
   description:
-    'Learn about MyCurves - empowering women through perfect fit. Professional bra fittings and quality lingerie for all shapes and sizes in Kenya.',
-};
+    'MyCurves empowers women through perfect fit — professional bra fittings and premium plus-size lingerie at Sarit Centre and Yaya Centre, Nairobi.',
+  path: '/about',
+});
 
 export default function AboutPage() {
   return (
