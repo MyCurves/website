@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Header } from "@/components/Header";
 import Footer from "@/components/Footer";
+import { MarkdownContent } from "@/components/MarkdownContent";
 import type { SitePage } from "@/lib/site-pages";
 
 interface ContentPageProps {
@@ -30,11 +31,7 @@ export default function ContentPage({ page, children }: ContentPageProps) {
             <p className="text-lg text-gray-600 mb-8">{page.description}</p>
           )}
 
-          {hasBody && (
-            <div className="prose prose-gray max-w-none whitespace-pre-line text-gray-700 leading-relaxed mb-8">
-              {page.body}
-            </div>
-          )}
+          {hasBody && <MarkdownContent content={page.body} className="mb-8" />}
 
           {children}
         </div>
