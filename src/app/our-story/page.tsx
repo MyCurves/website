@@ -90,7 +90,8 @@ export default function OurStory() {
           </div>
         </section>
 
-        <FounderVideo />
+        {/* Founder video — anchor #meet-wendy for Home teaser deep link */}
+        <FounderVideo variant="full" />
 
         <PressSection variant="full" />
 
