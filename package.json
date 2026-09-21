@@ -32,7 +32,8 @@
     "start": "next start",
     "lint": "eslint",
     "typecheck": "tsc --noEmit",
-    "check": "npm run lint && npm run typecheck && npm run build",
+    "validate:products": "node scripts/validate-product-slugs.mjs",
+    "check": "npm run lint && npm run typecheck && npm run validate:products && npm run build",
     "seed:products": "node scripts/seed-products.mjs",
     "check:links": "node scripts/check-links.mjs"
   },

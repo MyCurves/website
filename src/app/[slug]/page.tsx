@@ -7,12 +7,13 @@ export function generateStaticParams() {
   return getAllSitePages().map((page) => ({ slug: page.slug }));
 }
 
-export default function SitePageRoute({
+export default async function SitePageRoute({
   params,
 }: {
-  params: { slug: string };
+  params: Promise<{ slug: string }>;
 }) {
-  const page = getSitePage(params.slug);
+  const { slug } = await params;
+  const page = getSitePage(slug);
 
   if (!page) {
     notFound();
