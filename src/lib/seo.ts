@@ -14,7 +14,7 @@ export const SITE = {
   description:
     "MyCurves (Loving My Curves) offers plus-size bras, sports bras, and lingerie with free professional fittings at Sarit Centre and Yaya Centre, Nairobi. Order on WhatsApp.",
   url: process.env.NEXT_PUBLIC_SITE_URL ?? "https://lovingmycurves.com",
-  email: "hello@lovingmycurves.com",
+  email: "info@lovingmycurves.com",
   locale: "en-KE",
   phones: {
     sarit: "+254746844227",

@@ -17,7 +17,7 @@ We want you to love your purchase. If something isn't right, we're here to help.
 
 1. Bring the item with receipt or proof of purchase to Sarit Centre or Yaya Centre
 2. Our team will inspect the item and process your exchange or store credit
-3. For online orders, contact us at hello@lovingmycurves.com before sending items back
+3. For online orders, contact us at info@lovingmycurves.com before sending items back
 
 ## Non-Returnable Items
 

@@ -190,7 +190,7 @@ website/
 - Phone: +254 703 844 227
 - Hours: Mon-Sat 10am-7pm, Sun 10am-6pm
 
-**Email**: hello@lovingmycurves.com
+**Email**: info@lovingmycurves.com
 
 **Social Media**: Facebook, Instagram, Pinterest
 
