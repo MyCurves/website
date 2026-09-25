@@ -139,6 +139,23 @@ export function productAvailability(product: Product): string {
   return "https://schema.org/InStock";
 }
 
+const MERCHANT_RETURN_POLICY_ID = `${SITE.url}/#return-policy`;
+
+export function buildMerchantReturnPolicySchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "MerchantReturnPolicy",
+    "@id": MERCHANT_RETURN_POLICY_ID,
+    applicableCountry: "KE",
+    returnPolicyCategory:
+      "https://schema.org/MerchantReturnFiniteReturnWindow",
+    merchantReturnDays: 7,
+    returnMethod: "https://schema.org/ReturnInStore",
+    refundType: "https://schema.org/ExchangeRefund",
+    returnPolicyCountry: "KE",
+  };
+}
+
 export function buildOrganizationSchema() {
   const sameAs = [
     SOCIAL_LINKS.instagram,
@@ -160,6 +177,7 @@ export function buildOrganizationSchema() {
     areaServed: { "@type": "City", name: "Nairobi" },
     sameAs,
     founder: { "@id": `${SITE.url}/our-story#wendy-karira` },
+    hasMerchantReturnPolicy: { "@id": MERCHANT_RETURN_POLICY_ID },
   };
 }
 
@@ -232,6 +250,7 @@ export function buildProductSchema(product: Product) {
           availability: productAvailability(product),
           url: absoluteUrl(`/products/${product.slug}`),
           seller: { "@id": `${SITE.url}/#organization` },
+          hasMerchantReturnPolicy: { "@id": MERCHANT_RETURN_POLICY_ID },
         }
       : undefined;
 
