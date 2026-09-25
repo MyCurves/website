@@ -4,13 +4,6 @@ slug: deliveries
 description: Delivery options for orders within Nairobi and across Kenya.
 ---
 
-## Shipping Information
-
-- **Free delivery within Nairobi** for orders over KSh 5,000
-- **Standard delivery:** 2–5 business days within Nairobi
-- **Express delivery:** 1–2 business days (additional fee applies)
-- **Nationwide delivery** available — contact us for rates outside Nairobi
-
 ## Click & Collect
 
 Prefer to try before you buy? Order online and collect at:
