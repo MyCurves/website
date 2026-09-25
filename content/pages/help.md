@@ -14,7 +14,7 @@ How do I know if I'm wearing the wrong size?
 Signs include straps digging in, band riding up, cup spillage, or gaping cups. Visit our Find Your Size page or book an in-store fitting.
 
 Can I exchange a bra?
-Yes, subject to our returns policy. Hygiene seals must be intact and items unworn with tags attached.
+Yes, within 7 days of purchase, subject to our [Returns & Exchanges](/returns) policy: unused items in original packaging with tags attached and your receipt. No cash refunds. Underwear cannot be returned; sale and promotional items are excluded.
 
 Do you deliver?
 Yes. See our Deliveries page for details.

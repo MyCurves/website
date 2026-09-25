@@ -84,7 +84,7 @@ export default function Footer() {
                   href="/returns"
                   className="text-sm hover:text-primary transition"
                 >
-                  Returns
+                  Returns & Exchanges
                 </Link>
               </li>
               <li>

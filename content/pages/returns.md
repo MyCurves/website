@@ -1,28 +1,19 @@
 ---
-title: Returns
+title: Returns & Exchanges
 slug: returns
-description: Our returns and exchange policy for bras, panties, and shapewear.
+description: In-store exchange policy within 7 days of purchase. Original condition, tags, and receipt required. No cash refunds; underwear and sale or promo items excluded.
 ---
 
-## Return Policy
+For your convenience, we will gladly exchange your purchases subject to the conditions below.
 
-We want you to love your purchase. If something isn't right, we're here to help.
+1. Underwear, once sold, cannot be returned.
+2. No returns on any item purchased on sale or on promotion.
+3. Exchanges are accepted within 7 days from the purchase date. There are no cash refunds.
+4. Items must be in their original condition and packaging, unused, not altered, and have the original tags attached at the time of exchange.
+5. The original receipt must be presented at the time of exchange.
 
-- **30-day returns** on unworn items with tags attached
-- Items must be in **original packaging**
-- **Hygiene seal must be intact** on underwear and bras
-- Free returns for **store credit or exchange** at our retail locations
+Thank you for shopping with us.
 
-## How to Return
+♥ The MyCurves team
 
-1. Bring the item with receipt or proof of purchase to Sarit Centre or Yaya Centre
-2. Our team will inspect the item and process your exchange or store credit
-3. For online orders, contact us at info@lovingmycurves.com before sending items back
-
-## Non-Returnable Items
-
-- Worn or washed items
-- Items without hygiene seals
-- Sale items marked as final sale (where applicable)
-
-Questions? [Contact us](/contact) or WhatsApp +254 746 844 227.
+For help with an exchange, visit Sarit Centre or Yaya Centre, or [contact us](/contact) or WhatsApp +254 746 844 227.

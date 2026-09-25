@@ -6,6 +6,7 @@ import { WhatsAppFab } from "@/components/WhatsAppFab";
 import {
   SITE,
   buildLocalBusinessSchema,
+  buildMerchantReturnPolicySchema,
   buildOrganizationSchema,
   createPageMetadata,
 } from "@/lib/seo";
@@ -53,6 +54,7 @@ export default function RootLayout({
         <JsonLd
           data={[
             buildOrganizationSchema(),
+            buildMerchantReturnPolicySchema(),
             buildLocalBusinessSchema("sarit"),
             buildLocalBusinessSchema("yaya"),
           ]}
